@@ -1,0 +1,91 @@
+{
+  "name": "audit-skill",
+  "description": "Test cases for skill auditing functionality",
+  "testCases": [
+    {
+      "name": "basic_skill_audit",
+      "prompt": "Review this skill for marketplace readiness",
+      "expectedContent": [
+        "Structure",
+        "Token footprint",
+        "Routing integrity",
+        "Frontmatter",
+        "Evals"
+      ],
+      "assertionType": "contains"
+    },
+    {
+      "name": "skill_improvement_request",
+      "prompt": "Check the skill quality and suggest improvements",
+      "expectedContent": [
+        "automated checks",
+        "manual review",
+        "progressive disclosure",
+        "content quality"
+      ],
+      "assertionType": "contains"
+    },
+    {
+      "name": "pre_release_review",
+      "prompt": "Audit skill for pre-release review",
+      "expectedContent": [
+        "review-skill.sh",
+        "release-readiness",
+        "findings by severity"
+      ],
+      "assertionType": "contains"
+    },
+    {
+      "name": "skill_structure_analysis",
+      "prompt": "Analyze the skill structure and routing",
+      "expectedContent": [
+        "Phase 1: Automated Checks",
+        "Phase 2: Manual Review",
+        "Phase 3: Reporting"
+      ],
+      "assertionType": "contains"
+    },
+    {
+      "name": "token_optimization",
+      "prompt": "Check for token bloat and optimization opportunities",
+      "expectedContent": [
+        "token footprint",
+        "heuristic flags",
+        "progressive disclosure"
+      ],
+      "assertionType": "contains"
+    },
+    {
+      "name": "quality_standards",
+      "prompt": "What quality standards does this skill enforce?",
+      "expectedContent": [
+        "hallucination risk",
+        "agent ergonomics",
+        "description triggering",
+        "redundancy"
+      ],
+      "assertionType": "contains"
+    },
+    {
+      "name": "review_process",
+      "prompt": "How does the skill review process work?",
+      "expectedContent": [
+        "./scripts/review-skill.sh",
+        "automated checks",
+        "manual review",
+        "reporting template"
+      ],
+      "assertionType": "contains"
+    },
+    {
+      "name": "anti_patterns",
+      "prompt": "What should I avoid when reviewing skills?",
+      "expectedContent": [
+        "style preferences",
+        "token budget absolutism",
+        "perfect-is-enemy-of-good"
+      ],
+      "assertionType": "contains"
+    }
+  ]
+}
