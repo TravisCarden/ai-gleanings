@@ -5,7 +5,7 @@ description: Audit agent skills using marketplace-quality heuristics. Performs a
 
 # Audit Skill
 
-Audit skills against design principles with automated checks and manual review. Report findings by severity with concrete fixes.
+Audit skills against design principles with automated checks and manual audit. Report findings by severity with concrete fixes.
 
 ## Quick Start
 

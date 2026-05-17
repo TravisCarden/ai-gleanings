@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Test Runner for skill-review
+# Test Runner for audit-skill
 #
 # Runs validation tests based on evals.json and additional integration tests
 # SAFETY: This script only tests read-only operations, never modifies files
@@ -26,7 +26,7 @@ info() { echo -e "${BLUE}ℹ️  $1${NC}"; }
 # Test directory setup
 TEST_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SKILL_DIR="$(cd "$TEST_DIR/.." && pwd)"
-TEMP_DIR=$(mktemp -d -t skill-review-tests.XXXXXX)
+TEMP_DIR=$(mktemp -d -t audit-skill-tests.XXXXXX)
 trap 'rm -rf "$TEMP_DIR"' EXIT
 
 cd "$SKILL_DIR"
@@ -54,7 +54,7 @@ run_test() {
   fi
 }
 
-echo "=== Skill Review Test Suite ==="
+echo "=== Skill Audit Test Suite ==="
 echo "Skill: $(basename "$SKILL_DIR")"
 echo "Test directory: $TEMP_DIR"
 echo

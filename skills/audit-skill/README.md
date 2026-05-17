@@ -70,7 +70,7 @@ Path: ~/Projects/ai-gleanings/skills/audit-skill
 
 ### Comprehensive Review Output
 ```
-=== Skill Review: audit-skill ===
+=== Skill Audit: audit-skill ===
 Path: ~/Projects/ai-gleanings/skills/audit-skill
 
 ## Structure (words × 1.4 ≈ tokens)

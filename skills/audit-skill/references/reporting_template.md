@@ -1,6 +1,6 @@
 # Reporting Template
 
-Standardized format for skill review findings.
+Standardized format for skill audit findings.
 
 ## Severity Categories
 
@@ -26,7 +26,7 @@ Standardized format for skill review findings.
 ## Findings Report Template
 
 ```markdown
-# Skill Review: [skill-name]
+# Skill Audit: [skill-name]
 
 ## Summary
 - **Status**: [Critical Issues / Ready with Changes / Ready]

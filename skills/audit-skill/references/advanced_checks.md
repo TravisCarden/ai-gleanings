@@ -1,6 +1,6 @@
 # Advanced Review Checks
 
-Additional evaluation dimensions for comprehensive skill review.
+Additional evaluation dimensions for comprehensive skill audit.
 
 ## Skill Lifecycle Considerations
 
