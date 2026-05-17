@@ -35,7 +35,7 @@ Templates for user-level setup:
 Agent-agnostic instruction templates with universal principles and concrete examples.
 
 ### Development Environment
-Setup files for consistent development: devcontainer, dependencies, and project configuration.
+Setup files for consistent development: dependencies and project configuration.
 
 ## Usage Patterns
 
@@ -64,9 +64,6 @@ cp global-config/agent-settings/settings.json ~/.claude/settings.json
 ```bash
 # Install dependencies
 brew bundle
-
-# Optional: Use the devcontainer for consistent environment
-# (Requires VS Code or GitHub Codespaces)
 ```
 
 ## Quality Standards

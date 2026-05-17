@@ -60,7 +60,6 @@ Later refined to:
 global-config/   # Templates for ~/.claude/
 skills/          # Source of truth for custom skills
 instructions/    # Agent instruction templates
-.devcontainer/   # Exemplary devcontainer
 ```
 
 ### 4. Skills Directory Strategy
