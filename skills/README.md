@@ -16,6 +16,8 @@ skill-name/
 └── references/      # Documentation and examples
 ```
 
+See [NAMING.md](NAMING.md) for skill naming conventions (noun-based: `content-optimizer`, `skill-creator`).
+
 ## Testing
 
 Skills with measurable outputs include eval suites testing trigger conditions, expected outcomes, and token efficiency.
