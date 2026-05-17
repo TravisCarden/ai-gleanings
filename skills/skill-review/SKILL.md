@@ -1,6 +1,6 @@
 ---
 name: audit-skill
-description: Audit Claude Code agent skills for marketplace release-readiness. Performs automated structure analysis, token optimization, routing integrity checks, and content quality assessment. Generates detailed reports with severity-categorized findings and concrete fixes. Use when preparing skills for publication, conducting quality reviews, or when asked to "audit this skill", "review skill quality", "check skill structure", or "validate skill for release".
+description: Audit agent skills using marketplace-quality heuristics. Performs automated structure analysis, token optimization, routing integrity checks, and content quality assessment. Generates detailed reports with severity-categorized findings and concrete fixes. Use when preparing skills for publication, conducting quality reviews, or when asked to "audit this skill", "review skill quality", "check skill structure", or "validate skill for release".
 ---
 
 # Audit Skill

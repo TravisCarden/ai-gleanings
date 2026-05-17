@@ -1,14 +1,14 @@
 # Custom Skills
 
-Battle-tested skills demonstrating best practices in skill design, testing, and documentation.
+Skills demonstrating patterns in skill design, testing, and documentation.
 
 ## Quality Standards
 
 Skills in this directory meet these criteria:
-- Well-designed and demonstrating best practices
+- Well-designed and showing useful patterns
 - Actually useful and regularly used  
-- Properly tested with eval suites
-- Sufficiently documented for others to understand and use
+- Tested with eval suites
+- Documented for others to understand and use
 - Solving real problems, not theoretical ones
 
 ## Structure
@@ -25,7 +25,7 @@ skill-name/
 
 ## Testing
 
-Skills with objective outputs include eval suites with:
+Skills with measurable outputs include eval suites with:
 - Prompt arrays testing trigger conditions
 - Expected outcome verification  
 - Token efficiency measurements (where relevant)

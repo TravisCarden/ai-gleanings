@@ -24,7 +24,7 @@ workflow-automation/ # Development workflow instructions
 Instructions are tested for:
 - **Token efficiency** - Concise while complete
 - **Design principles** - Progressive disclosure, clear structure
-- **Effectiveness** - Produce consistently good results
+- **Effectiveness** - Produce good results consistently
 
 ## Usage
 

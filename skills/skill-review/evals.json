@@ -4,7 +4,7 @@
   "testCases": [
     {
       "name": "basic_skill_audit",
-      "prompt": "Review this skill for marketplace readiness",
+      "prompt": "Review this skill using marketplace heuristics",
       "expectedContent": [
         "Structure",
         "Token footprint",

@@ -34,4 +34,4 @@ echo "✓ Installed to ~/.claude/skills/audit-skill"
 
 echo "Installation complete!"
 echo ""
-echo "The skill will be available as 'audit-skill' in Claude Code."
+echo "The skill will be available as 'audit-skill' in your agent."

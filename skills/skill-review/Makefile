@@ -1,5 +1,5 @@
 # Simple development shortcuts (optional)
-# Most users will invoke via Claude Code skill system, not make
+# Most users will invoke via agent skill system, not make
 
 .PHONY: test install
 

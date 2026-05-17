@@ -1,6 +1,6 @@
 # Audit Skill
 
-Professional audit system for Claude Code agent skills. Validates release-readiness through automated structural analysis, comprehensive quality checks, and generates actionable improvement recommendations.
+Audit system for agent skills. Applies marketplace-quality heuristics through automated structural analysis and quality checks, generating actionable improvement recommendations.
 
 ## Features
 
@@ -9,18 +9,18 @@ Professional audit system for Claude Code agent skills. Validates release-readin
 - **📊 Progressive disclosure evaluation** - Query tracing and reference utilization analysis
 - **✅ Quality standards enforcement** - Content quality, triggering patterns, redundancy detection  
 - **📋 Standardized reporting** - Severity-categorized findings with specific fixes
-- **🧪 Comprehensive testing** - 14+ automated tests covering functionality and security
-- **🚀 Marketplace preparation** - Professional-grade validation for skill distribution
+- **🧪 Testing** - 14+ automated tests covering functionality and security
+- **🚀 Quality standards** - Validation using marketplace-quality heuristics
 
 ## Quick Start
 
-### Normal Usage (via Claude Code)
-The skill is typically invoked through Claude Code's agent system:
+### Normal Usage (via Agent)
+The skill is typically invoked through the agent system:
 
 ```
-Ask Claude: "Audit this skill for marketplace readiness"
-Ask Claude: "Check skill quality and structure"  
-Ask Claude: "Review this skill before release"
+Ask Agent: "Audit this skill using marketplace heuristics"
+Ask Agent: "Check skill quality and structure"  
+Ask Agent: "Review this skill before release"
 ```
 
 Claude will automatically use the audit-skill to analyze your current project.
@@ -32,7 +32,7 @@ For development or standalone use:
 # Fast validation (development feedback)
 ./scripts/validate-skill.sh <skill-path>
 
-# Comprehensive audit (marketplace preparation)  
+# Comprehensive audit (marketplace-quality standards)  
 ./scripts/review-skill.sh <skill-path>
 
 # Examples
@@ -97,7 +97,7 @@ Path: ~/Projects/ai-gleanings/skills/audit-skill
 ✓ All references valid, no orphans
 
 ## Frontmatter
-  Description: Audit Claude Code agent skills for marketplace release-readiness...
+  Description: Audit agent skills using marketplace-quality heuristics...
 
 ✓ Description length OK (57 words)
 
@@ -129,7 +129,7 @@ Path: ~/Projects/ai-gleanings/skills/audit-skill
 
 ### Two-Tier Validation System
 1. **validate-skill.sh** - Fast development feedback (20+ checks in <1s)
-2. **review-skill.sh** - Comprehensive marketplace audit (50+ checks)
+2. **review-skill.sh** - Comprehensive quality audit using marketplace heuristics (50+ checks)
 
 ### Progressive Disclosure
 - **SKILL.md** - Core workflows and routing decisions
@@ -170,4 +170,4 @@ Access detailed evaluation frameworks for:
 
 ---
 
-**Status**: Marketplace-ready • **Test Coverage**: 100% • **Security**: Hardened
+**Status**: High-quality • **Test Coverage**: 100% • **Security**: Validated

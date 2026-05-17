@@ -44,7 +44,7 @@ Track these metrics over time:
 ### Dynamic Testing
 - Automated query testing suite
 - Performance benchmarking  
-- Integration testing with Claude Code
+- Integration testing with agent systems
 - User journey automation
 
 ## Skill Ecosystem Health

@@ -1,12 +1,12 @@
 # AI Gleanings
 
-A curated collection of battle-tested AI tooling, demonstrating best practices through working examples for software engineers.
+A collection of AI tooling and patterns with working examples for software engineers.
 
 ## Quick Start
 
 Browse the directories to find tools you can use immediately:
 
-- **`skills/`** - Custom Claude Code skills with eval suites
+- **`skills/`** - Custom agent skills with eval suites
 - **`global-config/`** - Configuration templates for your `~/.claude/` setup  
 - **`instructions/`** - Agent-agnostic instruction patterns
 - **`Brewfile`** - Install AI development dependencies: `brew bundle`
@@ -15,24 +15,24 @@ Each directory includes documentation and usage examples.
 
 ## Philosophy
 
-This repository practices what it preaches - it's a **reference implementation** that:
+This repository follows its own principles:
 
-- **Self-demonstrates** - Uses its own principles for organization and tooling
+- **Self-demonstrates** - Uses its own tools for organization and management
 - **Cherry-pickable** - Each artifact works standalone with clear dependencies  
-- **Quality-gated** - Everything is tested, documented, and solves real problems
-- **Current best thinking** - Continuously updated, no deprecated artifacts
+- **Quality-gated** - Everything is tested, documented, and solves actual problems
+- **Current** - Updated as practices evolve, no deprecated artifacts
 
 ## What's Inside
 
 ### Skills (`/skills/`)
-Custom Claude Code skills demonstrating:
+Custom agent skills demonstrating:
 - Progressive disclosure and bundled resources
-- Comprehensive eval suites with quantitative metrics
+- Eval suites with quantitative metrics
 - Real problem-solving over theoretical examples
 
 ### Configuration (`/global-config/`)
 Templates for user-level setup:
-- **Claude Code** - Settings, keybindings, and permissions
+- **Agent settings** - Settings, keybindings, and permissions
 - **RTK** - Token optimization configurations
 - **Shell integration** - Hooks and productivity functions
 
@@ -56,7 +56,7 @@ Agent-agnostic instruction templates using hybrid approach:
 ln -s /path/to/ai-gleanings/skills/skill-name ~/.claude/skills/
 
 # Try configuration templates  
-cp global-config/claude-code/settings.json ~/.claude/settings.json
+cp global-config/agent-settings/settings.json ~/.claude/settings.json
 
 # Apply instruction patterns
 # Copy and adapt instructions/*.md for your agent setup
@@ -81,13 +81,13 @@ brew bundle
 
 ## Quality Standards
 
-Artifacts included here meet these criteria:
+Artifacts meet these criteria:
 
-- **Well-designed** - Demonstrates best practices worth imitating
+- **Well-designed** - Shows useful patterns worth adapting
 - **Actually useful** - Solves real problems, used regularly  
-- **Properly tested** - Evals for skills, validation for configs
+- **Tested** - Evals for skills, validation for configs
 - **Documented** - Clear usage instructions and design rationale
-- **80% use case** - Works for most people, adaptable for edge cases
+- **General purpose** - Works for most people, adaptable for specific needs
 
 ## Architecture
 
@@ -102,7 +102,7 @@ See `CONTEXT.md` for detailed architectural decisions and `docs/adr/` for specif
 
 ## Contributing
 
-This is a personal collection of proven practices. New artifacts are added when they meet the quality standards and demonstrate valuable patterns others should emulate.
+This is a personal collection of proven practices. New artifacts are added when they meet the quality standards and demonstrate useful patterns.
 
 ---
 

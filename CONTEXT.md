@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This repository captures and shares battle-tested AI tooling, demonstrating best practices through working examples rather than tutorials.
+This repository captures and shares AI tooling, demonstrating patterns through working examples rather than tutorials.
 
 ## Core Principles
 
@@ -10,14 +10,14 @@ This repository captures and shares battle-tested AI tooling, demonstrating best
 The repository practices what it preaches - it uses its own principles and tooling to manage itself. The `.claude/` directory contains only skills this repository actually uses for self-management.
 
 ### Reference Implementation  
-Each artifact represents the 80% use case - production-ready patterns that others can fork and adapt rather than build from scratch.
+Each artifact represents common patterns that others can fork and adapt rather than build from scratch.
 
 ### Quality Gates
 Archived artifacts must be:
-- Well-designed and demonstrating best practices
+- Well-designed and showing useful patterns
 - Actually useful and regularly used
-- Properly tested (evals for skills, functional tests for scripts, validation for configs, multi-dimensional testing for instructions)
-- Sufficiently documented for others to understand and use
+- Tested (evals for skills, functional tests for scripts, validation for configs, multi-dimensional testing for instructions)
+- Documented for others to understand and use
 - Solving real problems, not theoretical ones
 
 ### Testing Strategy
@@ -28,7 +28,7 @@ Archived artifacts must be:
 
 ## Artifact Types
 
-**Skills** - Custom Claude Code skills with full eval suites
+**Skills** - Custom agent skills with full eval suites
 **Instructions** - Agent-agnostic instruction templates using hybrid approach (principles + concrete examples)
 **Configurations** - Settings, keybindings, project configs
 **Tooling** - Custom tools like RTK configurations
@@ -43,7 +43,7 @@ The repository organizes by deployment context rather than artifact type, with t
 Skills live in `/skills/` as source of truth with minimal structure based on actual needs. The project's `.claude/skills/` symlinks only to skills used for repository self-management: skill-validation, documentation-generation, and quality-checks.
 
 ### Configuration Philosophy
-Global configs are exemplary templates demonstrating patterns, not copies of actual personal configurations. Templates show the principles without personal details.
+Global configs are templates showing patterns, not copies of actual personal configurations. Templates show the principles without personal details.
 
 ### Documentation Strategy
 All key patterns, strategies, and architectural decisions are documented for user learning, focusing on rationale over narrative. Documentation generation uses smart updates that preserve manual edits while keeping generated sections current.
@@ -54,4 +54,4 @@ README optimizes for discovery: understanding the philosophy and browsing availa
 Selective adoption with clear dependency trees. Users primarily cherry-pick specific tools or learn patterns rather than adopting the complete system. Each artifact documents its own dependencies for standalone use.
 
 ### Evolution Strategy
-Repository represents current best thinking - artifacts are updated or removed when practices evolve. No deprecation folders or historical preservation.
+Repository represents current thinking - artifacts are updated or removed when practices evolve. No deprecation folders or historical preservation.
