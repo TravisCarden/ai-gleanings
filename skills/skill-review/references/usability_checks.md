@@ -8,7 +8,7 @@ Evaluation criteria for skill accessibility and usability.
 - [ ] Includes realistic examples (not placeholders)
 - [ ] Error scenarios have recovery guidance
 
-## Expert User Experience  
+## Expert User Experience
 - [ ] Advanced features clearly marked
 - [ ] Expert shortcuts available
 - [ ] Edge cases documented
@@ -32,14 +32,14 @@ grep -r "description.*keyword" ../*/SKILL.md
 ### Composition Opportunities
 Skills that work well together:
 - Complementary domains (testing + deployment)
-- Sequential workflows (development + review)  
+- Sequential workflows (development + review)
 - Hierarchical relationships (general + specific tools)
 
 ## Maintenance Indicators
 
 ### Staleness Signals
 - [ ] Commands reference EOL software versions
-- [ ] Links point to archived repositories  
+- [ ] Links point to archived repositories
 - [ ] Examples use deprecated APIs
 - [ ] No updates in 6+ months for active domains
 

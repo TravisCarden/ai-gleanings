@@ -6,7 +6,7 @@ Additional evaluation dimensions for comprehensive skill review.
 
 ### Version Consistency
 - [ ] Skill name matches directory name
-- [ ] Referenced tools/APIs are current versions  
+- [ ] Referenced tools/APIs are current versions
 - [ ] Deprecated commands flagged with alternatives
 - [ ] Breaking changes documented since last review
 
@@ -34,10 +34,9 @@ echo "Tokens per concept: $(($total_tokens / $unique_concepts))"
 
 **Benchmarks**:
 - < 50 tokens/concept: Efficient
-- 50-100 tokens/concept: Acceptable  
+- 50-100 tokens/concept: Acceptable
 - \> 100 tokens/concept: Review for redundancy
 
 For additional checks, see:
 - [User Experience Guidelines](usability_checks.md) - Accessibility and UX evaluation
 - [Quality Metrics](quality_metrics.md) - Testing and measurement approaches
-

@@ -14,7 +14,7 @@ This document captures the complete design conversation that shaped the AI Glean
 
 **Decision:** Principles should center around **transparent learning** and **practical reusability**:
 - Document the learning process, not just outcomes (rationale without narrative bloat)
-- Make everything immediately runnable by others  
+- Make everything immediately runnable by others
 - Test all code to ensure reliability
 - Use the repository's own tooling to manage itself
 - Target practicing software engineers
@@ -46,18 +46,18 @@ This document captures the complete design conversation that shaped the AI Glean
 
 **Decision:** **Organize by deployment context** rather than artifact type:
 ```
-setup/           # Brewfile, installation scripts  
+setup/           # Brewfile, installation scripts
 config/          # Claude Code settings, global configs
 skills/          # Custom skills
 agents/          # Agent definitions and instructions
-tools/           # Custom tooling 
+tools/           # Custom tooling
 examples/        # Working demonstrations
 ```
 
 Later refined to:
 ```
 .claude/         # Project's own config (demonstrates project best practices)
-global-config/   # Templates for ~/.claude/ 
+global-config/   # Templates for ~/.claude/
 skills/          # Source of truth for custom skills
 instructions/    # Agent instruction templates
 .devcontainer/   # Exemplary devcontainer
@@ -69,7 +69,7 @@ instructions/    # Agent instruction templates
 
 **Key Decision:** **Curated demonstration** - The project's `.claude/skills/` symlinks only to skills used for repository self-management:
 - skill-validation (run evals, quality gates)
-- documentation-generation (README, indexes)  
+- documentation-generation (README, indexes)
 - quality-checks (config validation, script testing)
 
 **Rationale:** Demonstrates intentional skill curation as a best practice rather than convenience dump.
@@ -103,7 +103,7 @@ instructions/    # Agent instruction templates
 
 **Decisions:**
 - **Skills:** Eval suites with prompt arrays and expected outcomes
-- **Scripts:** Functional tests ensuring they work as documented  
+- **Scripts:** Functional tests ensuring they work as documented
 - **Configs:** Schema validation and linting
 - **Instructions:** Token efficiency + design principles (progressive disclosure)
 
@@ -149,7 +149,7 @@ Archived artifacts must be:
 
 ### Documentation
 - CONTEXT.md captures domain language and principles
-- ADRs document key architectural decisions  
+- ADRs document key architectural decisions
 - Smart documentation updates preserve manual edits
 - Focus on rationale over narrative
 
@@ -161,7 +161,7 @@ Archived artifacts must be:
 
 The repository became a **curated reference implementation** balancing:
 - **Self-demonstration** (using its own tooling)
-- **Selective adoption** (clear dependencies, no forced bundling)  
+- **Selective adoption** (clear dependencies, no forced bundling)
 - **Pattern learning** (exemplary templates with rationale)
 - **Quality gates** (proper testing for each artifact type)
 - **Clean evolution** (current best thinking, no historical cruft)

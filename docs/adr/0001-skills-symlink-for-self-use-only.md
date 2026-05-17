@@ -1,7 +1,7 @@
 # ADR-0001: Project Skills Directory Symlinks Only to Self-Management Skills
 
-**Status**: Accepted  
-**Date**: 2026-05-16  
+**Status**: Accepted
+**Date**: 2026-05-16
 **Context**: Repository design for AI tooling reference implementation
 
 ## Decision

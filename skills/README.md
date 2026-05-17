@@ -4,31 +4,21 @@ Skills demonstrating patterns in skill design, testing, and documentation.
 
 ## Quality Standards
 
-Skills in this directory meet these criteria:
-- Well-designed and showing useful patterns
-- Actually useful and regularly used  
-- Tested with eval suites
-- Documented for others to understand and use
-- Solving real problems, not theoretical ones
+Skills are well-designed, useful, tested, documented, and solve real problems.
 
 ## Structure
 
-Skills use minimal structure based on actual needs:
-
 ```
 skill-name/
-├── SKILL.md          # Required: skill definition
-├── evals/           # Optional: evaluation test cases
-├── scripts/         # Optional: bundled automation
-└── references/      # Optional: documentation and examples
+├── SKILL.md          # Skill definition
+├── evals/           # Evaluation test cases
+├── scripts/         # Bundled automation
+└── references/      # Documentation and examples
 ```
 
 ## Testing
 
-Skills with measurable outputs include eval suites with:
-- Prompt arrays testing trigger conditions
-- Expected outcome verification  
-- Token efficiency measurements (where relevant)
+Skills with measurable outputs include eval suites testing trigger conditions, expected outcomes, and token efficiency.
 
 ## Usage
 

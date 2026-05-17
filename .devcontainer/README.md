@@ -6,7 +6,7 @@ Exemplary devcontainer setup for AI tooling development projects.
 
 This devcontainer demonstrates best practices for:
 - Consistent development environment across team members
-- Pre-installed AI development tools and dependencies  
+- Pre-installed AI development tools and dependencies
 - Proper volume mounting and workspace configuration
 - Integration with VS Code and GitHub Codespaces
 

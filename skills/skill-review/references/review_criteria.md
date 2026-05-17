@@ -48,7 +48,7 @@ wc -w <skill>/SKILL.md <skill>/references/**/*.md
 Good routing patterns:
 ```markdown
 - Basic usage: Stay in SKILL.md
-- Advanced config: See [config.md](references/config.md)  
+- Advanced config: See [config.md](references/config.md)
 - Troubleshooting: See [debugging.md](references/debugging.md)
 ```
 
@@ -90,7 +90,7 @@ Healthy pattern: SKILL.md + 1 reference resolves 80% of queries.
 ### Weak Triggers
 
 - Generic terms: "helps with", "manages"
-- Vague domains: "development", "operations" 
+- Vague domains: "development", "operations"
 - Internal jargon: "the platform", "our system"
 
 ### Triggering Test Questions
@@ -113,5 +113,5 @@ Healthy pattern: SKILL.md + 1 reference resolves 80% of queries.
 ### Redundancy Severity
 
 - **Critical**: Exact duplication (copy-paste detected)
-- **Important**: Conceptual overlap with different examples  
+- **Important**: Conceptual overlap with different examples
 - **Minor**: Similar phrasing but different context

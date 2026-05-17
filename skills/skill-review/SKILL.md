@@ -22,7 +22,7 @@ This covers structure, token footprint, routing integrity, and evals presence.
 ### Phase 1: Automated Checks
 
 The script validates:
-- File structure and SKILL.md existence  
+- File structure and SKILL.md existence
 - Token footprint with heuristic flags
 - Routing integrity (orphans and dangling links)
 - Frontmatter completeness
@@ -60,7 +60,7 @@ A complete review produces:
 
 1. **Automated report** - Script output with measurements
 2. **Manual findings** - Severity-categorized issues with specific fixes
-3. **Progressive disclosure assessment** - Query tracing and routing analysis  
+3. **Progressive disclosure assessment** - Query tracing and routing analysis
 4. **Fix recommendations** - Concrete actions with file/line references
 
 ## What Not to Flag

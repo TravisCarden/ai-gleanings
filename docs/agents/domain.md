@@ -13,7 +13,7 @@ This repository uses a **single-context** layout for domain documentation.
 
 Skills like `improve-codebase-architecture`, `diagnose`, and `tdd` read `CONTEXT.md` to understand:
 - Domain terminology and concepts
-- Business rules and constraints  
+- Business rules and constraints
 - System boundaries and key abstractions
 - Current architectural patterns
 
@@ -23,7 +23,7 @@ Skills like `improve-codebase-architecture`, `diagnose`, and `tdd` read `CONTEXT
 
 ADRs document significant architectural decisions and their rationale.
 
-**Location:** `docs/adr/` 
+**Location:** `docs/adr/`
 **Format:** `NNNN-title.md` (e.g., `0001-use-local-markdown-for-issues.md`)
 
 Skills read ADRs to understand:

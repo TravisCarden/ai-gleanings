@@ -1,16 +1,16 @@
 # Global Configuration Templates
 
-Templates for user-level AI tooling configuration. These show patterns and practices without personal details.
+Templates for user-level AI tooling configuration showing common patterns.
 
 ## Structure
 
 - `agent-settings/` - Agent user settings and keybindings
-- `rtk/` - RTK (Rust Token Killer) configuration  
+- `rtk/` - RTK (Rust Token Killer) configuration
 - `shell-integration/` - Shell hooks and functions
 
 ## Usage
 
-These are templates, not drop-in replacements. Review and adapt them for your specific setup:
+These are templates to adapt for your setup:
 
 ```bash
 # Example: Using agent settings template
@@ -20,4 +20,4 @@ cp global-config/agent-settings/settings.json ~/.claude/settings.json
 
 ## Philosophy
 
-Templates show common patterns that work for most users and can be adapted for specific needs.
+Templates show common patterns adaptable for specific needs.

@@ -11,7 +11,7 @@ Rather than linking to all available skills, this directory demonstrates **inten
 This repository uses these skills for self-management:
 
 - `skill-validation` - Run evals and quality gates for archived skills
-- `documentation-generation` - Generate README sections and skill indexes  
+- `documentation-generation` - Generate README sections and skill indexes
 - `quality-checks` - Validate configs and test setup scripts
 
 ## Adding Skills

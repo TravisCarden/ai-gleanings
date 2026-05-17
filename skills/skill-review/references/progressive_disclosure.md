@@ -16,7 +16,7 @@ Pick 5 representative user queries and trace information needs:
 
 | Query | SKILL.md loads | References needed | Total tokens |
 |-------|----------------|-------------------|--------------|
-| "How do I start?" | ✓ Sufficient | None | ~200 |  
+| "How do I start?" | ✓ Sufficient | None | ~200 |
 | "Configure advanced settings" | ✓ Routing | config.md | ~500 |
 | "Debug connection errors" | ✓ Routing | troubleshooting.md | ~400 |
 
@@ -59,7 +59,7 @@ grep -oE 'See \[[^]]+\]\([^)]+\)' SKILL.md
 ## Quick Start
 [Basic steps here]
 
-## Advanced Configuration  
+## Advanced Configuration
 For complex setups, see [config.md](references/config.md)
 
 ## Troubleshooting
@@ -72,7 +72,7 @@ For connection issues, see [debugging.md](references/debugging.md)
 See [all-the-things.md](references/all-the-things.md) for complete information.
 
 ## Getting Started
-See [setup.md](references/setup.md), [config.md](references/config.md), 
+See [setup.md](references/setup.md), [config.md](references/config.md),
 and [troubleshooting.md](references/troubleshooting.md)
 ```
 
@@ -86,7 +86,7 @@ Each reference should have a clear, narrow scope:
 - `troubleshooting.md` - Just error scenarios and fixes
 - `advanced_config.md` - Just complex configuration options
 
-**Bad examples**:  
+**Bad examples**:
 - `everything_else.md` - Catch-all for random content
 - `more_info.md` - Vague scope, unclear when to use
 
@@ -101,23 +101,23 @@ Each reference should have a clear, narrow scope:
 ## Progressive Disclosure Anti-Patterns
 
 ### The Mega-SKILL
-**Problem**: Everything crammed into SKILL.md  
-**Symptoms**: 150+ lines, multiple unrelated sections  
+**Problem**: Everything crammed into SKILL.md
+**Symptoms**: 150+ lines, multiple unrelated sections
 **Fix**: Extract advanced topics to focused references
 
 ### The Reference Dump
-**Problem**: SKILL.md just routes to references  
-**Symptoms**: No useful content in main file, everything requires clicking  
+**Problem**: SKILL.md just routes to references
+**Symptoms**: No useful content in main file, everything requires clicking
 **Fix**: Include essential workflows directly in SKILL.md
 
-### The Circular Reference  
-**Problem**: References that reference other references  
-**Symptoms**: Deep navigation chains, confused routing  
+### The Circular Reference
+**Problem**: References that reference other references
+**Symptoms**: Deep navigation chains, confused routing
 **Fix**: Flatten hierarchy, ensure 1-hop max from SKILL.md
 
 ### The Orphan Reference
-**Problem**: Reference files that aren't routed from SKILL.md  
-**Symptoms**: Files exist but unreachable via normal workflow  
+**Problem**: Reference files that aren't routed from SKILL.md
+**Symptoms**: Files exist but unreachable via normal workflow
 **Fix**: Add routing or delete unused references
 
 ## Testing Progressive Disclosure
@@ -129,6 +129,6 @@ Each reference should have a clear, narrow scope:
 4. Note how many files they need to complete each task
 
 ### Token Efficiency Test
-1. Calculate tokens for common query resolutions  
+1. Calculate tokens for common query resolutions
 2. Compare against monolithic approach
 3. Aim for 30-50% token savings on routine queries

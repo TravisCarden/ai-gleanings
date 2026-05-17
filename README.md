@@ -7,7 +7,7 @@ A collection of AI tooling and patterns with working examples for software engin
 Browse the directories to find tools you can use immediately:
 
 - **`skills/`** - Custom agent skills with eval suites
-- **`global-config/`** - Configuration templates for your `~/.claude/` setup  
+- **`global-config/`** - Configuration templates for your `~/.claude/` setup
 - **`instructions/`** - Agent-agnostic instruction patterns
 - **`Brewfile`** - Install AI development dependencies: `brew bundle`
 
@@ -15,20 +15,15 @@ Each directory includes documentation and usage examples.
 
 ## Philosophy
 
-This repository follows its own principles:
-
-- **Self-demonstrates** - Uses its own tools for organization and management
-- **Cherry-pickable** - Each artifact works standalone with clear dependencies  
-- **Quality-gated** - Everything is tested, documented, and solves actual problems
+- **Self-demonstrating** - Uses its own tools for organization
+- **Standalone** - Each artifact works independently with clear dependencies
+- **Quality-focused** - Tested, documented, and solves real problems
 - **Current** - Updated as practices evolve, no deprecated artifacts
 
 ## What's Inside
 
 ### Skills (`/skills/`)
-Custom agent skills demonstrating:
-- Progressive disclosure and bundled resources
-- Eval suites with quantitative metrics
-- Real problem-solving over theoretical examples
+Custom agent skills with eval suites and bundled resources that solve real problems.
 
 ### Configuration (`/global-config/`)
 Templates for user-level setup:
@@ -37,15 +32,10 @@ Templates for user-level setup:
 - **Shell integration** - Hooks and productivity functions
 
 ### Instructions (`/instructions/`)
-Agent-agnostic instruction templates using hybrid approach:
-- Universal principles that work across AI platforms
-- Concrete examples illustrating the principles
-- Token-efficient with progressive disclosure
+Agent-agnostic instruction templates with universal principles and concrete examples.
 
 ### Development Environment
-- **`.devcontainer/`** - Consistent development environment setup
-- **`Brewfile`** - Dependency management for AI tooling
-- **`.claude/`** - Project configuration demonstrating best practices
+Setup files for consistent development: devcontainer, dependencies, and project configuration.
 
 ## Usage Patterns
 
@@ -55,7 +45,7 @@ Agent-agnostic instruction templates using hybrid approach:
 # Use a specific skill
 ln -s /path/to/ai-gleanings/skills/skill-name ~/.claude/skills/
 
-# Try configuration templates  
+# Try configuration templates
 cp global-config/agent-settings/settings.json ~/.claude/settings.json
 
 # Apply instruction patterns
@@ -81,24 +71,11 @@ brew bundle
 
 ## Quality Standards
 
-Artifacts meet these criteria:
-
-- **Well-designed** - Shows useful patterns worth adapting
-- **Actually useful** - Solves real problems, used regularly  
-- **Tested** - Evals for skills, validation for configs
-- **Documented** - Clear usage instructions and design rationale
-- **General purpose** - Works for most people, adaptable for specific needs
+All artifacts are well-designed, useful, tested, documented, and general purpose.
 
 ## Architecture
 
-This repository demonstrates:
-
-- **Minimal structure based on actual needs** - No over-engineering
-- **Smart documentation updates** - Generated sections preserve manual edits  
-- **Intentional skill curation** - Project uses only skills it needs
-- **Agent-agnostic patterns** - Works across AI platforms where possible
-
-See `CONTEXT.md` for detailed architectural decisions and `docs/adr/` for specific design choices.
+Minimal structure, agent-agnostic patterns, and intentional curation. See `CONTEXT.md` for details.
 
 ## Contributing
 

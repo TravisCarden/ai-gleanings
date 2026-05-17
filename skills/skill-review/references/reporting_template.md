@@ -10,7 +10,7 @@ Standardized format for skill review findings.
 - Description won't trigger on relevant queries
 - Missing required frontmatter
 
-### Important (🟡 Fix Before Release)  
+### Important (🟡 Fix Before Release)
 - Significant redundancy (>20% duplicate content)
 - Bloated SKILL.md (>1000 tokens)
 - Weak triggering patterns
@@ -39,7 +39,7 @@ Standardized format for skill review findings.
    - **Fix**: [Concrete action needed]
    - **Impact**: [Why this blocks release]
 
-## Important Issues  
+## Important Issues
 [Same format as above]
 
 ## Minor Issues
@@ -57,7 +57,7 @@ For each finding:
 ```markdown
 **[Issue Title]** (`filename.md:lines`)
 - **Current**: [What exists now]
-- **Problem**: [Why it's an issue]  
+- **Problem**: [Why it's an issue]
 - **Fix**: [Specific action to take]
 - **Files affected**: [List all files to change]
 ```
@@ -67,7 +67,7 @@ For each finding:
 After completing review, deliver:
 
 - [ ] **Automated report** - Script output with measurements
-- [ ] **Manual findings** - Using severity template above  
+- [ ] **Manual findings** - Using severity template above
 - [ ] **Fix recommendations** - Specific actions with file references
 - [ ] **Progressive disclosure assessment** - Query tracing results
 - [ ] **Token optimization suggestions** - Specific content to move/merge/delete
