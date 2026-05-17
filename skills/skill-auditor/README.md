@@ -1,4 +1,4 @@
-# Audit Skill
+# Skill Auditor
 
 Audit system for agent skills. Applies marketplace-quality heuristics through automated structural analysis and quality checks, generating actionable improvement recommendations.
 
@@ -23,7 +23,7 @@ Ask Agent: "Check skill quality and structure"
 Ask Agent: "Review this skill before release"
 ```
 
-Claude will automatically use the audit-skill to analyze your current project.
+Claude will automatically use the skill-auditor to analyze your current project.
 
 ### Direct Script Usage (Development)
 For development or standalone use:
@@ -47,7 +47,7 @@ For development or standalone use:
 ./install.sh
 
 # Or manual symlink
-ln -sf "$(pwd)" ~/.claude/skills/audit-skill
+ln -sf "$(pwd)" ~/.claude/skills/skill-auditor
 ```
 
 ## Self-Assessment Results
@@ -57,7 +57,7 @@ The skill has been validated against its own standards:
 ### Quick Validation Output
 ```
 === Quick Skill Validation ===
-Path: ~/Projects/ai-gleanings/skills/audit-skill
+Path: ~/Projects/ai-gleanings/skills/skill-auditor
 
 ✓ SKILL.md exists
 ✓ Frontmatter description found
@@ -70,8 +70,8 @@ Path: ~/Projects/ai-gleanings/skills/audit-skill
 
 ### Comprehensive Review Output
 ```
-=== Skill Audit: audit-skill ===
-Path: ~/Projects/ai-gleanings/skills/audit-skill
+=== Skill Audit: skill-auditor ===
+Path: ~/Projects/ai-gleanings/skills/skill-auditor
 
 ## Structure (words × 1.4 ≈ tokens)
 

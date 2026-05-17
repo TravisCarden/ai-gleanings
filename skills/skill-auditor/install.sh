@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# Simple global installation script for audit-skill
+# Simple global installation script for skill-auditor
 
 set -euo pipefail
 
 SKILL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-echo "Installing audit-skill..."
+echo "Installing skill-auditor..."
 
 # Check dependencies
 if ! command -v jq >/dev/null 2>&1; then
@@ -23,15 +23,15 @@ echo "Running self-tests..."
 mkdir -p ~/.claude/skills
 
 # Safe installation with conflict detection
-if [[ -e ~/.claude/skills/audit-skill && ! -L ~/.claude/skills/audit-skill ]]; then
-    echo "Error: ~/.claude/skills/audit-skill exists and is not a symlink" >&2
+if [[ -e ~/.claude/skills/skill-auditor && ! -L ~/.claude/skills/skill-auditor ]]; then
+    echo "Error: ~/.claude/skills/skill-auditor exists and is not a symlink" >&2
     echo "Remove it manually and re-run this script." >&2
     exit 1
 fi
 
-ln -sf "$SKILL_DIR" ~/.claude/skills/audit-skill
-echo "✓ Installed to ~/.claude/skills/audit-skill"
+ln -sf "$SKILL_DIR" ~/.claude/skills/skill-auditor
+echo "✓ Installed to ~/.claude/skills/skill-auditor"
 
 echo "Installation complete!"
 echo ""
-echo "The skill will be available as 'audit-skill' in your agent."
+echo "The skill will be available as 'skill-auditor' in your agent."

@@ -1,5 +1,5 @@
 {
-  "name": "audit-skill",
+  "name": "skill-auditor",
   "description": "Test cases for skill auditing functionality",
   "testCases": [
     {

@@ -11,5 +11,5 @@ test:
 
 # Development installation (users typically install via skill system)
 install:
-	@ln -sf "$(PWD)" ~/.claude/skills/audit-skill
+	@ln -sf "$(PWD)" ~/.claude/skills/skill-auditor
 	@echo "Development installation complete"
