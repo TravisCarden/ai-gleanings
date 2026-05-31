@@ -1,0 +1,64 @@
+{
+  "fixture": "deprecated-refs",
+  "ground_truth": {
+    "scripts_directory_contents": ["scripts/run.sh"],
+    "canonical_command": "bash scripts/run.sh {build|test|deploy}"
+  },
+  "seeded_conflicts": [
+    {
+      "id": "deprecated-build-script",
+      "description": "CLAUDE.md references scripts/build.sh which does not exist",
+      "files": ["CLAUDE.md"],
+      "match_strings": ["scripts/build.sh"]
+    },
+    {
+      "id": "deprecated-deploy-script",
+      "description": "CLAUDE.md references scripts/deploy.sh which does not exist",
+      "files": ["CLAUDE.md"],
+      "match_strings": ["scripts/deploy.sh"]
+    },
+    {
+      "id": "deprecated-test-script",
+      "description": "CLAUDE.md references scripts/test.sh which does not exist",
+      "files": ["CLAUDE.md"],
+      "match_strings": ["scripts/test.sh"]
+    },
+    {
+      "id": "overview-readme-redundancy",
+      "description": "README.md and docs/overview.md duplicate the system description (3 components, in-memory channel)",
+      "files": ["README.md", "docs/overview.md"]
+    },
+    {
+      "id": "architecture-components-redundancy",
+      "description": "docs/architecture.md and docs/components.md both describe the three components",
+      "files": ["docs/architecture.md", "docs/components.md"]
+    }
+  ],
+  "must_preserve": [
+    {
+      "id": "queue-driver-interface",
+      "description": "Adding new queues requires implementing QueueDriver — only mentioned in architecture.md and components.md",
+      "match_strings": ["QueueDriver"]
+    },
+    {
+      "id": "rules-yaml-location",
+      "description": "Classifier rules live in config/rules.yaml — only mentioned in components.md",
+      "match_strings": ["config/rules.yaml"]
+    },
+    {
+      "id": "port-8080",
+      "description": "Ingester runs on port 8080",
+      "match_strings": ["8080"]
+    },
+    {
+      "id": "kafka-sqs",
+      "description": "Backing queues are Kafka and SQS",
+      "match_strings": ["Kafka", "SQS"]
+    }
+  ],
+  "deprecated_strings_to_remove": [
+    "scripts/build.sh",
+    "scripts/deploy.sh",
+    "scripts/test.sh"
+  ]
+}

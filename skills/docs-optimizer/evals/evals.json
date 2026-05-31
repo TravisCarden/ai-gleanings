@@ -1,0 +1,109 @@
+{
+  "skill_name": "docs-optimizer",
+  "evals": [
+    {
+      "id": 1,
+      "name": "conflicting-installs",
+      "prompt": "Audit and clean up the documentation in `evals/fixtures/conflicting-installs/`. Treat that directory as the project root (the README.md, docs/, AGENTS.md inside it). Don't modify the originals — copy the directory to the output location first, then make your changes there. Save your audit report and the cleaned-up files to the output location.",
+      "fixture_path": "evals/fixtures/conflicting-installs",
+      "assertions": [
+        {
+          "name": "deprecated_api_removed",
+          "description": "References to api-old.acme.com are removed from all output files"
+        },
+        {
+          "name": "package_manager_conflict_resolved",
+          "description": "Output settles on one package manager (npm or yarn) consistently across all files, OR explicitly documents that all are supported with one canonical default"
+        },
+        {
+          "name": "current_api_preserved",
+          "description": "api.acme.com/v2 endpoint is preserved in output"
+        },
+        {
+          "name": "docker_option_preserved",
+          "description": "Docker installation option (unique to getting-started.md) is preserved somewhere in output"
+        },
+        {
+          "name": "port_preserved",
+          "description": "Port 3000 is preserved in output"
+        },
+        {
+          "name": "audit_report_produced",
+          "description": "Output includes a structured audit report listing detected conflicts and drift"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "deprecated-refs",
+      "prompt": "Audit and clean up the documentation in `evals/fixtures/deprecated-refs/`. Treat that directory as the project root. Don't modify the originals — copy the directory to the output location first, then make your changes there. Save your audit report and the cleaned-up files to the output location.",
+      "fixture_path": "evals/fixtures/deprecated-refs",
+      "assertions": [
+        {
+          "name": "deprecated_build_script_removed",
+          "description": "Reference to scripts/build.sh removed (or replaced with the actual scripts/run.sh build)"
+        },
+        {
+          "name": "deprecated_deploy_script_removed",
+          "description": "Reference to scripts/deploy.sh removed"
+        },
+        {
+          "name": "deprecated_test_script_removed",
+          "description": "Reference to scripts/test.sh removed"
+        },
+        {
+          "name": "queue_driver_preserved",
+          "description": "QueueDriver interface mention preserved (unique architectural detail)"
+        },
+        {
+          "name": "rules_yaml_preserved",
+          "description": "config/rules.yaml location preserved (unique to components.md)"
+        },
+        {
+          "name": "port_8080_preserved",
+          "description": "Port 8080 preserved"
+        },
+        {
+          "name": "kafka_sqs_preserved",
+          "description": "Kafka and SQS backing queues preserved"
+        },
+        {
+          "name": "audit_report_produced",
+          "description": "Output includes a structured audit report"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "scattered-runbooks",
+      "prompt": "Audit and clean up the documentation in `evals/fixtures/scattered-runbooks/`. Treat that directory as the project root. Don't modify the originals — copy the directory to the output location first, then make your changes there. Save your audit report and the cleaned-up files to the output location.",
+      "fixture_path": "evals/fixtures/scattered-runbooks",
+      "assertions": [
+        {
+          "name": "agent_command_conflict_resolved",
+          "description": "Output settles on `make agent-run` (which exists in Makefile) rather than `npm run agent` (which has no backing)"
+        },
+        {
+          "name": "agent_config_path_resolved",
+          "description": "Output settles on config/agent.yaml (matches Makefile) rather than agent.config.json"
+        },
+        {
+          "name": "broker_port_preserved",
+          "description": "Broker port 5672 preserved"
+        },
+        {
+          "name": "worker_concurrency_preserved",
+          "description": "Worker --workers flag preserved"
+        },
+        {
+          "name": "worker_run_preserved",
+          "description": "Worker run command python -m worker preserved"
+        },
+        {
+          "name": "audit_report_produced",
+          "description": "Output includes a structured audit report"
+        }
+      ]
+    }
+  ]
+}

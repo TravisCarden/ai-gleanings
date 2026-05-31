@@ -1,0 +1,49 @@
+{
+  "fixture": "scattered-runbooks",
+  "ground_truth": {
+    "canonical_agent_command": "make agent-run",
+    "canonical_agent_config_path": "config/agent.yaml",
+    "make_target_exists": true,
+    "npm_run_agent_exists": false
+  },
+  "seeded_conflicts": [
+    {
+      "id": "agent-run-command-conflict",
+      "description": "AGENTS.md says `make agent-run`; CLAUDE.md says `npm run agent`. Makefile contains agent-run; no package.json with agent script exists.",
+      "files": ["AGENTS.md", "CLAUDE.md"],
+      "match_strings": ["make agent-run", "npm run agent"]
+    },
+    {
+      "id": "agent-config-path-conflict",
+      "description": "AGENTS.md references config/agent.yaml; CLAUDE.md references agent.config.json",
+      "files": ["AGENTS.md", "CLAUDE.md"],
+      "match_strings": ["config/agent.yaml", "agent.config.json"]
+    },
+    {
+      "id": "scattered-how-to-run",
+      "description": "How-to-run instructions appear in AGENTS.md, CLAUDE.md, agent/README.md, and worker/README.md with no single source of truth",
+      "files": ["AGENTS.md", "CLAUDE.md", "agent/README.md", "worker/README.md"]
+    }
+  ],
+  "must_preserve": [
+    {
+      "id": "broker-port",
+      "description": "Broker port 5672",
+      "match_strings": ["5672"]
+    },
+    {
+      "id": "worker-concurrency",
+      "description": "Worker concurrency override flag --workers N",
+      "match_strings": ["--workers"]
+    },
+    {
+      "id": "worker-run-command",
+      "description": "Worker run command",
+      "match_strings": ["python -m worker"]
+    }
+  ],
+  "deprecated_strings_to_remove": [
+    "npm run agent",
+    "agent.config.json"
+  ]
+}

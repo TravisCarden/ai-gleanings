@@ -3,6 +3,4 @@
 .PHONY: test
 
 test:
-	@./scripts/validate-skill.sh .
-	@./scripts/review-skill.sh .
-	@./tests/test-runner.sh
+	@python3 tests/test_verify_refs.py

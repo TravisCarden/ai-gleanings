@@ -11,7 +11,7 @@
 
 1. **Conceptual fit**: Skills are persistent capabilities/specialists, not one-off actions
 2. **Ecosystem consistency**: Matches patterns from successful tools (`docker`, `prettier`, `eslint`)
-3. **Conciseness**: `content-optimizer` vs `optimize-content-skill`
+3. **Conciseness**: `docs-optimizer` vs `optimize-docs-skill`
 4. **Flexibility**: Handles multi-purpose skills naturally
 5. **Memorability**: Easier to remember "the optimizer" than "the optimize-thing"
 6. **Claude Code alignment**: Follows the pattern of the platform itself
@@ -19,7 +19,7 @@
 ## Naming Guidelines
 
 ### Format
-- Use descriptive compound nouns: `content-optimizer`, `skill-creator`
+- Use descriptive compound nouns: `docs-optimizer`, `skill-creator`
 - Focus on **what/who**, not **what-it-does**: `analyzer` not `analyze-performance`
 - Use hyphens for multi-word names
 - Keep it concise but clear
@@ -28,7 +28,7 @@
 ### Examples
 
 #### ✅ **Good Examples**
-- `content-optimizer` - handles content optimization, auditing, consolidation
+- `docs-optimizer` - handles docs auditing, consolidation, and cleanup
 - `skill-creator` - creates and improves skills
 - `skill-auditor` - audits skills for quality (renamed from `audit-skill`)
 - `performance-analyzer` - analyzes performance
@@ -48,10 +48,13 @@
 ```
 skills/
 ├── NAMING.md                 # This file
-├── content-optimizer/        # Noun-based directory name
-│   └── SKILL.md             # Frontmatter: name: content-optimizer
-├── skill-creator/           # Already follows standard
-└── skill-auditor/           # Renamed from audit-skill
+├── README.md                 # Skills overview
+├── docs-optimizer/           # Audits + cleans up docs
+│   └── SKILL.md             # Frontmatter: name: docs-optimizer
+├── docs-optimizer-creator/   # Creates a tailored docs-optimizer for a repo
+│   └── SKILL.md             # Frontmatter: name: docs-optimizer-creator
+└── skill-auditor/            # Audits skills
+    └── SKILL.md             # Frontmatter: name: skill-auditor
 ```
 
 ### Frontmatter Consistency
@@ -59,21 +62,19 @@ The directory name and SKILL.md frontmatter `name` field must match exactly:
 
 ```yaml
 ---
-name: content-optimizer  # Must match directory name
+name: docs-optimizer  # Must match directory name
 description: ...
 ---
 ```
 
-### Installation/Symlinks
-Installation scripts should create symlinks matching the skill name:
-```bash
-ln -sf "$SKILL_DIR" ~/.claude/skills/content-optimizer
-```
+### Installation
+Skills are installed via `npx skills`. Individual install scripts are not part of the skill's responsibility; the skill directory is consumed by the installer.
 
 ## Historical Changes
 
-- **May 17, 2026**: Renamed `audit-skill` → `skill-auditor` to follow new standard
-- **May 17, 2026**: Established this naming convention document
+- **May 31, 2026**: Added `docs-optimizer` (audit + consolidate + clean up instruction docs) and `docs-optimizer-creator` (creates a tailored `docs-optimizer` calibrated to a target repo, plus a drift-check harness). Same shape as the `skill-creator` / `skill-auditor` pair, scoped to docs.
+- **May 17, 2026**: Renamed `audit-skill` → `skill-auditor` to follow new standard.
+- **May 17, 2026**: Established this naming convention document.
 
 ## When Creating New Skills
 
@@ -82,7 +83,4 @@ ln -sf "$SKILL_DIR" ~/.claude/skills/content-optimizer
 3. **Ensure consistency** between directory name and SKILL.md frontmatter
 4. **Update installation scripts** to use the correct name
 5. **Test the name** - does it feel natural to say "use the [name]" or "ask the [name]"?
-
----
-
-**Next skill to be created**: `content-optimizer` (combining content auditing, optimization, and consolidation)
+6. **Pair convention** — when a skill has a paired skill that creates instances of it (e.g. `skill-creator` creates skills; `docs-optimizer-creator` creates docs-optimizers), name the paired skill `<thing>-creator`.

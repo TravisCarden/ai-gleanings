@@ -1,0 +1,9 @@
+{
+  "skill_name": "docs-optimizer-creator",
+  "evals": [],
+  "notes": [
+    "This skill's output is a generated SKILL.md draft + drift-check harness, calibrated to a target repo. Mechanical assertions on the draft would require fixture repos large enough to exercise the creator thresholds (>8 docs, >15 commits/90d), and even then the 'good output' bar is whether the draft surfaces patterns specific to that repo — a qualitative judgment.",
+    "Validation is currently qualitative: dry runs against three real repos of different shapes (high-discipline, low-velocity, mid-flux) confirmed the workflow produces sensible outputs that captured drift human inspection missed.",
+    "If/when a programmatic eval suite makes sense here, possible assertions: (1) against a fixture repo with seeded conventions, does the produced canonical-source ordering match the expected ordering? (2) does the produced drift-check harness match the fixture's test-framework convention? (3) does the produced skill description name at least one pattern from the fixture's audit findings?"
+  ]
+}

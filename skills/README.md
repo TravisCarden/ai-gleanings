@@ -16,7 +16,7 @@ skill-name/
 └── references/      # Documentation and examples
 ```
 
-See [NAMING.md](NAMING.md) for skill naming conventions (noun-based: `content-optimizer`, `skill-creator`).
+See [NAMING.md](NAMING.md) for skill naming conventions (noun-based: `docs-optimizer`, `skill-creator`).
 
 ## Testing
 

@@ -42,13 +42,8 @@ For development or standalone use:
 ```
 
 ### Installation
-```bash
-# Simple installation
-./install.sh
 
-# Or manual symlink
-ln -sf "$(pwd)" ~/.claude/skills/skill-auditor
-```
+Skills are installed via `npx skills`. See the project root for installation tooling.
 
 ## Self-Assessment Results
 

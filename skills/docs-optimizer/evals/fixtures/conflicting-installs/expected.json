@@ -1,0 +1,42 @@
+{
+  "fixture": "conflicting-installs",
+  "ground_truth": {
+    "package_manager_canonical": "npm",
+    "api_endpoint_canonical": "https://api.acme.com/v2/widgets",
+    "api_endpoint_deprecated": "https://api-old.acme.com/widgets"
+  },
+  "seeded_conflicts": [
+    {
+      "id": "pkg-mgr-conflict",
+      "description": "README.md says npm; docs/setup.md says yarn",
+      "files": ["README.md", "docs/setup.md"],
+      "match_strings": ["npm", "yarn"]
+    },
+    {
+      "id": "api-endpoint-conflict",
+      "description": "AGENTS.md and docs/setup.md reference deprecated api-old.acme.com; README and docs/getting-started.md use api.acme.com/v2",
+      "files": ["AGENTS.md", "docs/setup.md"],
+      "match_strings": ["api-old.acme.com"]
+    }
+  ],
+  "must_preserve": [
+    {
+      "id": "docker-option",
+      "description": "Docker installation option is unique to docs/getting-started.md",
+      "match_strings": ["docker", "Docker"]
+    },
+    {
+      "id": "current-api",
+      "description": "The current API endpoint must remain documented",
+      "match_strings": ["api.acme.com/v2"]
+    },
+    {
+      "id": "port-3000",
+      "description": "The service listens on port 3000",
+      "match_strings": ["3000"]
+    }
+  ],
+  "deprecated_strings_to_remove": [
+    "api-old.acme.com"
+  ]
+}
