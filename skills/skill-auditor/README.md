@@ -1,78 +1,105 @@
 # Skill Auditor
 
-Audit system for agent skills. Applies marketplace-quality heuristics through automated structural analysis and quality checks, generating actionable improvement recommendations.
+Audits agent skills against marketplace-quality heuristics. Runs automated structural checks (token footprint, routing integrity, frontmatter, evals) and surfaces a manual-review checklist (progressive disclosure, content quality, redundancy, description triggering). Produces severity-categorized findings with concrete fixes.
 
-## Features
+## What it does
 
-- **🔍 Structure analysis** - Token counts, routing integrity, frontmatter validation
-- **🛡️ Security-hardened scripts** - Safe path handling, dependency checks, error boundaries
-- **📊 Progressive disclosure evaluation** - Query tracing and reference utilization
-- **✅ Quality standards** - Content quality, triggering patterns, redundancy detection
-- **📋 Standardized reporting** - Severity-categorized findings with specific fixes
-- **🧪 Testing** - 14+ automated tests
-- **🚀 Marketplace heuristics** - High-quality validation standards
+- **Structure & token footprint.** Reports per-file word and token counts; flags `SKILL.md` over ~1000 tokens and reference files over ~800 tokens as split candidates.
+- **Routing integrity.** Cross-references the `references/` directory against link targets in `SKILL.md` to find dangling links and orphan files.
+- **Frontmatter validation.** Confirms a `description` exists and is long enough to trigger reliably (~15+ words).
+- **Evals presence.** Detects `evals/evals.json` (current convention) or `evals.json` (legacy), validates JSON, counts test cases.
+- **Manual-review checklist.** Surfaces the judgment-shaped checks that automation can't make: progressive disclosure, hallucination risk, agent ergonomics, description triggering, redundancy. See `SKILL.md` and `references/` for criteria.
 
 ## Quick Start
 
-### Normal Usage (via Agent)
-The skill is typically invoked through the agent system:
+### Via agent
 
 ```
-Ask Agent: "Audit this skill using marketplace heuristics"
-Ask Agent: "Check skill quality and structure"
-Ask Agent: "Review this skill before release"
+"Audit this skill"
+"Review skill quality"
+"Check skill structure"
+"Validate skill for release"
 ```
 
-Claude will automatically use the skill-auditor to analyze your current project.
-
-### Direct Script Usage (Development)
-For development or standalone use:
+### Direct
 
 ```bash
-# Fast validation (development feedback)
+# Fast feedback during development
 ./scripts/validate-skill.sh <skill-path>
 
-# Comprehensive audit (marketplace-quality standards)
+# Full review (structure + routing + frontmatter + evals)
 ./scripts/review-skill.sh <skill-path>
-
-# Examples
-./scripts/validate-skill.sh ~/Projects/my-skill
-./scripts/review-skill.sh ../existing-skill
-./scripts/validate-skill.sh .    # Current directory
 ```
 
-### Installation
+`<skill-path>` may be absolute or relative. Both scripts are read-only.
+
+## When NOT to use this
+
+- You want to audit instruction *docs* (`README.md`, `AGENTS.md`, `CLAUDE.md`, contributor guides) rather than agent skills — use [`docs-optimizer`](../docs-optimizer/) instead.
+- You want to *create* a skill from scratch — use `skill-creator` for that; bring `skill-auditor` in for the pre-release pass.
+
+## Install
 
 Skills are installed via `npx skills`. See the project root for installation tooling.
 
-## Self-Assessment Results
+## Test
 
-The skill has been validated against its own standards:
+```bash
+make test
+```
 
-### Quick Validation Output
+Runs `validate-skill.sh` and `review-skill.sh` self-checks plus `tests/test-runner.sh` (script existence, self-validation, error handling, fixture-based positive and negative tests, evals schema validation, security checks).
+
+## Structure
+
+```
+skill-auditor/
+├── SKILL.md                          # Workflow the agent follows
+├── README.md                         # This file
+├── Makefile                          # `make test`
+├── scripts/
+│   ├── validate-skill.sh             # Fast development feedback
+│   └── review-skill.sh               # Comprehensive review
+├── references/                       # Progressive-disclosure modules
+│   ├── review_criteria.md
+│   ├── progressive_disclosure.md
+│   ├── reporting_template.md
+│   ├── advanced_checks.md
+│   ├── usability_checks.md
+│   └── quality_metrics.md
+├── evals/
+│   └── evals.json                    # Eval suite ({skill_name, evals[]})
+└── tests/
+    └── test-runner.sh                # Integration tests
+```
+
+## Example output
+
+`./scripts/validate-skill.sh .` (fast feedback):
+
 ```
 === Quick Skill Validation ===
-Path: ~/Projects/ai-gleanings/skills/skill-auditor
+Path: /path/to/skills/skill-auditor
 
 ✓ SKILL.md exists
 ✓ Frontmatter description found
-✓ SKILL.md size OK: ~565 tokens
-✓ evals.json found (8 test cases)
+✓ SKILL.md size OK: ~625 tokens
+✓ evals/evals.json found (8 test cases)
 ✓ All 6 references linked
 
 ✓ Basic validation passed
 ```
 
-### Comprehensive Review Output
+`./scripts/review-skill.sh .` (full review):
+
 ```
-=== Skill Audit: skill-auditor ===
-Path: ~/Projects/ai-gleanings/skills/skill-auditor
+=== Skill Review: skill-auditor ===
 
 ## Structure (words × 1.4 ≈ tokens)
 
   File                                        Words  Tokens
   --------------------------------------------------------
-  README.md                                     412    ~576
+  README.md                                     428    ~599
   references/
       advanced_checks.md                        176    ~246
       progressive_disclosure.md                 567    ~793
@@ -80,89 +107,29 @@ Path: ~/Projects/ai-gleanings/skills/skill-auditor
       reporting_template.md                     333    ~466
       review_criteria.md                        504    ~705
       usability_checks.md                       220    ~308
-  SKILL.md                                      404    ~565
+  SKILL.md                                      447    ~625
   --------------------------------------------------------
-  TOTAL                                        2879   ~4030
+  TOTAL                                        2938   ~4113
 
 ### Footprint Flags
-✓ SKILL.md ~565 tokens
-✓ Total ~4030 tokens
+✓ SKILL.md ~625 tokens
+✓ Total ~4113 tokens
 
 ## Routing Integrity
 ✓ All references valid, no orphans
 
 ## Frontmatter
   Description: Audit agent skills using marketplace-quality heuristics...
-
-✓ Description length OK (57 words)
+✓ Description length OK (55 words)
 
 ## Evals
-✓ evals.json found (8 test cases)
-
-=== End Review ===
+✓ evals/evals.json found (8 test cases)
 ```
 
-## Quality Analysis
+On a skill with problems, the same sections surface dangling links, orphan reference files, oversized files, missing frontmatter, and missing or empty evals — each with a concrete pointer.
 
-### Current Metrics
-- **Token efficiency**: 67.2 tokens/concept (excellent)
-- **Structure integrity**: 100% valid routing, no orphans
-- **Test coverage**: 8 comprehensive test cases + 14 integration tests
-- **Security**: Hardened with path validation and input sanitization
-- **Documentation**: Complete progressive disclosure with focused references
+## Limitations
 
-### Quality Thresholds
-
-| Component | Warning Level | Target Range | This Skill |
-|-----------|---------------|--------------|------------|
-| SKILL.md | >1000 tokens | 500-700 tokens | ✅ 565 tokens |
-| Total skill | >6000 tokens | 3000-5000 tokens | ✅ 4030 tokens |
-| Reference files | >800 tokens | 400-600 tokens | ✅ All under 800 |
-| Description | <15 words | 20-50 words | ✅ 57 words |
-
-## Architecture
-
-### Two-Tier Validation System
-1. **validate-skill.sh** - Fast development feedback (20+ checks in <1s)
-2. **review-skill.sh** - Comprehensive quality audit using marketplace heuristics (50+ checks)
-
-### Progressive Disclosure
-- **SKILL.md** - Core workflows and routing decisions
-- **references/** - 6 focused modules for deep expertise:
-  - `review_criteria.md` - Quality standards and heuristics
-  - `progressive_disclosure.md` - Information architecture assessment
-  - `reporting_template.md` - Standardized finding formats
-  - `advanced_checks.md` - Lifecycle and performance considerations
-  - `usability_checks.md` - User experience evaluation
-  - `quality_metrics.md` - Testing and measurement approaches
-
-### Security Model
-- **Read-only operations** - Scripts never modify files outside their scope
-- **Path validation** - Prevents directory traversal attacks
-- **Input sanitization** - Validates all user inputs
-- **Dependency checks** - Verifies required tools (jq) before execution
-
-## Advanced Usage
-
-### Manual Review Criteria
-Access detailed evaluation frameworks for:
-- Content quality assessment and hallucination risk analysis
-- User experience evaluation (new user vs expert workflows)
-- Maintenance indicators and evolution readiness
-- Skill ecosystem health and interaction patterns
-
-### Testing & Measurement
-- Real query testing with production usage patterns
-- Performance benchmarking and token efficiency analysis
-- Stress testing and security validation
-- Community feedback integration
-
-### Professional Reporting
-- Severity-categorized findings (Critical/Important/Minor)
-- Concrete fix recommendations with file/line references
-- Progressive disclosure effectiveness analysis
-- Token optimization suggestions
-
----
-
-**Status**: High-quality • **Test Coverage**: 100% • **Security**: Validated
+- **Heuristics, not rules.** Token budgets are guidance; flagged values aren't always actionable. The script reports them so a human can decide.
+- **Read-only.** Scripts never modify the audited skill. Fixes are recommendations, not edits.
+- **Schema-tolerant for evals.** Both `evals/evals.json` (current) and `evals.json` (legacy) are detected; both `{evals: [...]}` and `{testCases: [...]}` shapes are counted. New skills should follow the current convention.

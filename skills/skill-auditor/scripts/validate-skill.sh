@@ -116,15 +116,27 @@ main() {
   fi
 
   # 4. Evals check (with error handling)
-  if [[ -f "$skill_path/evals.json" ]]; then
-    if ! jq empty "$skill_path/evals.json" >/dev/null 2>&1; then
-      warn "evals.json found but contains invalid JSON"
-    elif jq -e '.testCases | length > 0' "$skill_path/evals.json" >/dev/null 2>&1; then
-      local eval_count
-      eval_count=$(jq '.testCases | length' "$skill_path/evals.json")
-      success "evals.json found ($eval_count test cases)"
+  # Prefer evals/evals.json (current convention); fall back to evals.json (legacy).
+  local evals_file=""
+  if [[ -f "$skill_path/evals/evals.json" ]]; then
+    evals_file="$skill_path/evals/evals.json"
+  elif [[ -f "$skill_path/evals.json" ]]; then
+    evals_file="$skill_path/evals.json"
+  fi
+
+  if [[ -n "$evals_file" ]]; then
+    local rel_evals="${evals_file#$skill_path/}"
+    if ! jq empty "$evals_file" >/dev/null 2>&1; then
+      warn "$rel_evals found but contains invalid JSON"
     else
-      warn "evals.json found but no test cases"
+      # Support both schemas: {evals: [...]} (current) and {testCases: [...]} (legacy).
+      local eval_count
+      eval_count=$(jq '(.evals // .testCases // []) | length' "$evals_file")
+      if [[ "$eval_count" -gt 0 ]]; then
+        success "$rel_evals found ($eval_count test cases)"
+      else
+        warn "$rel_evals found but no test cases"
+      fi
     fi
   else
     warn "No evals.json found"

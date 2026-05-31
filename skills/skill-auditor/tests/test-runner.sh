@@ -108,14 +108,18 @@ cat > "$TEST_SKILL_DIR/references/advanced.md" << 'EOF'
 This file contains advanced topics for the test skill.
 EOF
 
-cat > "$TEST_SKILL_DIR/evals.json" << 'EOF'
+mkdir -p "$TEST_SKILL_DIR/evals"
+cat > "$TEST_SKILL_DIR/evals/evals.json" << 'EOF'
 {
-  "name": "test-skill",
-  "testCases": [
+  "skill_name": "test-skill",
+  "evals": [
     {
+      "id": 1,
       "name": "basic_test",
       "prompt": "test prompt",
-      "expectedContent": ["test"]
+      "assertions": [
+        {"name": "mentions_test", "description": "Output mentions test"}
+      ]
     }
   ]
 }
@@ -140,21 +144,30 @@ run_test "Missing frontmatter fails validation" "./scripts/validate-skill.sh \"$
 # Test 6: evals.json validation
 echo
 echo "## evals.json Validation"
-if [[ -f evals.json ]]; then
-  if jq empty evals.json >/dev/null 2>&1; then
-    pass "evals.json is valid JSON"
+# Prefer evals/evals.json (current convention); fall back to evals.json (legacy).
+evals_file=""
+if [[ -f evals/evals.json ]]; then
+  evals_file=evals/evals.json
+elif [[ -f evals.json ]]; then
+  evals_file=evals.json
+fi
+
+if [[ -n "$evals_file" ]]; then
+  if jq empty "$evals_file" >/dev/null 2>&1; then
+    pass "$evals_file is valid JSON"
     tests_passed=$((tests_passed + 1))
   else
-    fail "evals.json contains invalid JSON"
+    fail "$evals_file contains invalid JSON"
   fi
   tests_run=$((tests_run + 1))
 
-  eval_count=$(jq -r '.testCases | length' evals.json 2>/dev/null || echo "0")
+  # Support both schemas: {evals: [...]} (current) and {testCases: [...]} (legacy).
+  eval_count=$(jq -r '(.evals // .testCases // []) | length' "$evals_file" 2>/dev/null || echo "0")
   if [[ $eval_count -gt 0 ]]; then
-    pass "evals.json contains $eval_count test cases"
+    pass "$evals_file contains $eval_count test cases"
     tests_passed=$((tests_passed + 1))
   else
-    fail "evals.json contains no test cases"
+    fail "$evals_file contains no test cases"
   fi
   tests_run=$((tests_run + 1))
 fi

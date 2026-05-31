@@ -266,14 +266,30 @@ main() {
   echo
 
   # 4. evals.json
+  # Prefer evals/evals.json (current convention); fall back to evals.json (legacy).
   echo "## Evals"
-  if [[ -f "$skill_path/evals.json" ]]; then
-    local eval_count
-    eval_count=$(grep -c '"prompt"' "$skill_path/evals.json" 2>/dev/null || echo "0")
-    if [[ $eval_count -eq 0 ]]; then
-      warn "evals.json found but no test cases detected"
+  local evals_file=""
+  if [[ -f "$skill_path/evals/evals.json" ]]; then
+    evals_file="$skill_path/evals/evals.json"
+  elif [[ -f "$skill_path/evals.json" ]]; then
+    evals_file="$skill_path/evals.json"
+  fi
+
+  if [[ -n "$evals_file" ]]; then
+    local rel_evals="${evals_file#$skill_path/}"
+    if ! command -v jq >/dev/null 2>&1; then
+      warn "$rel_evals found but jq unavailable for parsing"
+    elif ! jq empty "$evals_file" >/dev/null 2>&1; then
+      warn "$rel_evals found but contains invalid JSON"
     else
-      success "evals.json found ($eval_count test cases)"
+      # Support both schemas: {evals: [...]} (current) and {testCases: [...]} (legacy).
+      local eval_count
+      eval_count=$(jq '(.evals // .testCases // []) | length' "$evals_file")
+      if [[ $eval_count -eq 0 ]]; then
+        warn "$rel_evals found but no test cases detected"
+      else
+        success "$rel_evals found ($eval_count test cases)"
+      fi
     fi
   else
     warn "No evals.json found"

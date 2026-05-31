@@ -1,91 +1,177 @@
 {
-  "name": "skill-auditor",
-  "description": "Test cases for skill auditing functionality",
-  "testCases": [
+  "skill_name": "skill-auditor",
+  "evals": [
     {
+      "id": 1,
       "name": "basic_skill_audit",
       "prompt": "Review this skill using marketplace heuristics",
-      "expectedContent": [
-        "Structure",
-        "Token footprint",
-        "Routing integrity",
-        "Frontmatter",
-        "Evals"
-      ],
-      "assertionType": "contains"
+      "assertions": [
+        {
+          "name": "covers_structure",
+          "description": "Output covers structure analysis"
+        },
+        {
+          "name": "covers_token_footprint",
+          "description": "Output reports token footprint"
+        },
+        {
+          "name": "covers_routing_integrity",
+          "description": "Output checks routing integrity (orphans, dangling links)"
+        },
+        {
+          "name": "covers_frontmatter",
+          "description": "Output validates frontmatter"
+        },
+        {
+          "name": "covers_evals",
+          "description": "Output checks for evals presence"
+        }
+      ]
     },
     {
+      "id": 2,
       "name": "skill_improvement_request",
       "prompt": "Check the skill quality and suggest improvements",
-      "expectedContent": [
-        "automated checks",
-        "manual review",
-        "progressive disclosure",
-        "content quality"
-      ],
-      "assertionType": "contains"
+      "assertions": [
+        {
+          "name": "runs_automated_checks",
+          "description": "Output references automated checks phase"
+        },
+        {
+          "name": "runs_manual_review",
+          "description": "Output references manual review phase"
+        },
+        {
+          "name": "evaluates_progressive_disclosure",
+          "description": "Output evaluates progressive disclosure"
+        },
+        {
+          "name": "evaluates_content_quality",
+          "description": "Output evaluates content quality"
+        }
+      ]
     },
     {
+      "id": 3,
       "name": "pre_release_review",
       "prompt": "Audit skill for pre-release review",
-      "expectedContent": [
-        "review-skill.sh",
-        "release-readiness",
-        "findings by severity"
-      ],
-      "assertionType": "contains"
+      "assertions": [
+        {
+          "name": "invokes_review_script",
+          "description": "Output invokes or references `review-skill.sh`"
+        },
+        {
+          "name": "reports_release_readiness",
+          "description": "Output reports release readiness"
+        },
+        {
+          "name": "categorizes_findings_by_severity",
+          "description": "Findings are categorized by severity"
+        }
+      ]
     },
     {
+      "id": 4,
       "name": "skill_structure_analysis",
       "prompt": "Analyze the skill structure and routing",
-      "expectedContent": [
-        "Phase 1: Automated Checks",
-        "Phase 2: Manual Review",
-        "Phase 3: Reporting"
-      ],
-      "assertionType": "contains"
+      "assertions": [
+        {
+          "name": "phase_1_automated_checks",
+          "description": "Output covers Phase 1: Automated Checks"
+        },
+        {
+          "name": "phase_2_manual_review",
+          "description": "Output covers Phase 2: Manual Review"
+        },
+        {
+          "name": "phase_3_reporting",
+          "description": "Output covers Phase 3: Reporting"
+        }
+      ]
     },
     {
+      "id": 5,
       "name": "token_optimization",
       "prompt": "Check for token bloat and optimization opportunities",
-      "expectedContent": [
-        "token footprint",
-        "heuristic flags",
-        "progressive disclosure"
-      ],
-      "assertionType": "contains"
+      "assertions": [
+        {
+          "name": "reports_token_footprint",
+          "description": "Output reports token footprint with concrete numbers"
+        },
+        {
+          "name": "applies_heuristic_flags",
+          "description": "Output applies heuristic flags for size concerns"
+        },
+        {
+          "name": "evaluates_progressive_disclosure",
+          "description": "Output considers progressive disclosure as an optimization lever"
+        }
+      ]
     },
     {
+      "id": 6,
       "name": "quality_standards",
       "prompt": "What quality standards does this skill enforce?",
-      "expectedContent": [
-        "hallucination risk",
-        "agent ergonomics",
-        "description triggering",
-        "redundancy"
-      ],
-      "assertionType": "contains"
+      "assertions": [
+        {
+          "name": "hallucination_risk",
+          "description": "Output mentions hallucination risk as a quality dimension"
+        },
+        {
+          "name": "agent_ergonomics",
+          "description": "Output mentions agent ergonomics"
+        },
+        {
+          "name": "description_triggering",
+          "description": "Output covers description triggering"
+        },
+        {
+          "name": "redundancy",
+          "description": "Output covers redundancy detection"
+        }
+      ]
     },
     {
+      "id": 7,
       "name": "review_process",
       "prompt": "How does the skill review process work?",
-      "expectedContent": [
-        "./scripts/review-skill.sh",
-        "automated checks",
-        "manual review",
-        "reporting template"
-      ],
-      "assertionType": "contains"
+      "assertions": [
+        {
+          "name": "names_review_script",
+          "description": "Output names `./scripts/review-skill.sh`"
+        },
+        {
+          "name": "describes_automated_checks",
+          "description": "Output describes the automated-checks phase"
+        },
+        {
+          "name": "describes_manual_review",
+          "description": "Output describes the manual-review phase"
+        },
+        {
+          "name": "describes_reporting_template",
+          "description": "Output describes the reporting template"
+        }
+      ]
     },
     {
+      "id": 8,
       "name": "anti_patterns",
       "prompt": "What should I avoid when reviewing skills?",
-      "expectedContent": [
-        "style preferences",
-        "token budget absolutism",
-        "perfect-is-enemy-of-good"
-      ],
-      "assertionType": "contains"
+      "assertions": [
+        {
+          "name": "warns_against_style_preferences",
+          "description": "Output warns against flagging style preferences"
+        },
+        {
+          "name": "warns_against_token_budget_absolutism",
+          "description": "Output warns against treating token budgets as absolutes"
+        },
+        {
+          "name": "warns_against_perfect_is_enemy_of_good",
+          "description": "Output warns against perfect-is-enemy-of-good gating"
+        }
+      ]
     }
   ]
 }
