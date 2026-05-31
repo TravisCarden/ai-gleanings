@@ -7,7 +7,7 @@ This repository captures and shares AI tooling, demonstrating patterns through w
 ## Core Principles
 
 ### Self-Demonstrating
-The repository practices what it preaches - it uses its own principles and tooling to manage itself. The `.claude/` directory contains only skills this repository actually uses for self-management.
+The repository practices what it preaches — it uses its own principles and tooling to manage itself. Skills authored here are invoked by direct path mention against this repo's own artifacts (e.g. running `skill-auditor` against `skills/skill-auditor`).
 
 ### Reference Implementation
 Each artifact represents common patterns that others can fork and adapt rather than build from scratch.
@@ -23,11 +23,10 @@ Archived artifacts must be well-designed, useful, tested, documented, and solve 
 
 ## Artifact Types
 
-- **Skills** - Custom agent skills with eval suites
-- **Instructions** - Agent-agnostic templates with principles and examples
-- **Configurations** - Settings, keybindings, project configs
-- **Tooling** - Custom tools and configurations
-- **Setup** - Development environment and dependencies
+- **Skills** (`skills/`) — Custom agent skills with eval suites. The currently-built set is `skill-auditor`, `docs-optimizer`, and `docs-optimizer-creator`.
+- **Instructions** (`instructions/`) — Placeholder for agent-agnostic instruction templates; not yet populated.
+- **Configurations** (`global-config/`) — Placeholder for user-level configuration templates; not yet populated.
+- **Setup** (`Brewfile`) — Development environment dependencies.
 
 ## Architecture Decisions
 
@@ -35,7 +34,7 @@ Archived artifacts must be well-designed, useful, tested, documented, and solve 
 The repository organizes by deployment context rather than artifact type, with the repository itself serving as the primary example of project structure best practices.
 
 ### Skill Organization
-Skills live in `/skills/` as source of truth with minimal structure based on actual needs. The project's `.claude/skills/` symlinks only to skills used for repository self-management: skill-validation, documentation-generation, and quality-checks.
+Skills live in `/skills/` as the source of truth. They are invoked by direct path mention against this repo, or installed user-level via `npx skills`. The project does not maintain a `.claude/skills/` symlink set — see [`docs/adr/0001-skills-invocation-strategy.md`](docs/adr/0001-skills-invocation-strategy.md) for the rationale.
 
 ### Configuration Philosophy
 Global configs are templates showing patterns, not copies of actual personal configurations. Templates show the principles without personal details.

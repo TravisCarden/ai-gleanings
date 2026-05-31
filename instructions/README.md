@@ -1,25 +1,17 @@
 # Agent Instructions
 
-Agent-agnostic instruction templates using hybrid approach (principles + concrete examples).
+Placeholder for agent-agnostic instruction templates.
 
-## Philosophy
+## Status
 
-These work across AI platforms using universal principles, concrete examples, and clear structure.
+Not yet populated. The intent is to host instruction templates that work across AI platforms — principles, concrete examples, and clear structure rather than platform-specific syntax.
 
-## Structure
+## Intended layout
 
-Instructions are organized by use case:
+When templates land here:
 
-```
-code-review/         # Code review instruction patterns
-project-analysis/    # Codebase and architecture analysis
-workflow-automation/ # Development workflow instructions
-```
+- `code-review/` — code-review instruction patterns
+- `project-analysis/` — codebase and architecture analysis
+- `workflow-automation/` — development-workflow instructions
 
-## Quality Standards
-
-Instructions are tested for token efficiency, design principles, and effectiveness.
-
-## Usage
-
-Templates to adapt (not use verbatim) including context, principles, and examples.
+The usage pattern will be: copy and adapt (not use verbatim), keeping the context, principles, and examples that fit.

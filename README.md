@@ -42,8 +42,8 @@ Setup files for consistent development: dependencies and project configuration.
 ### Cherry-Picking Tools
 
 ```bash
-# Use a specific skill
-ln -s /path/to/ai-gleanings/skills/skill-name ~/.claude/skills/
+# Install a specific skill (recommended)
+npx skills
 
 # Try configuration templates
 cp global-config/agent-settings/settings.json ~/.claude/settings.json
@@ -51,6 +51,8 @@ cp global-config/agent-settings/settings.json ~/.claude/settings.json
 # Apply instruction patterns
 # Copy and adapt instructions/*.md for your agent setup
 ```
+
+See [`skills/NAMING.md`](skills/NAMING.md) for the skill naming and install convention.
 
 ### Learning Patterns
 

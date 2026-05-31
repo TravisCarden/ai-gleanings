@@ -24,4 +24,4 @@ Skills with measurable outputs include eval suites testing trigger conditions, e
 
 ## Usage
 
-These skills can be installed using standard skill management tools or by symlinking to your agent's skills directory.
+Skills are installed via `npx skills`. They can also be invoked directly by reading a skill's `SKILL.md` from this repo.
