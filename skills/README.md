@@ -10,7 +10,7 @@ Skills are well-designed, useful, tested, documented, and solve real problems.
 
 ```
 skill-name/
-├── SKILL.md          # Skill definition
+├── SKILL.md         # Skill definition
 ├── evals/           # Evaluation test cases
 ├── scripts/         # Bundled automation
 └── references/      # Documentation and examples
