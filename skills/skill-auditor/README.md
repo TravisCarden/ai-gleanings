@@ -40,7 +40,7 @@ Audits agent skills against marketplace-quality heuristics. Runs automated struc
 
 ## Install
 
-Skills are installed via `npx skills`. See the project root for installation tooling.
+Install via `npx skills add TravisCarden/ai-gleanings --skill skill-auditor` or `npx skills add TravisCarden/ai-gleanings` for all skills.
 
 ## Test
 

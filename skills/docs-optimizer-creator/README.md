@@ -29,7 +29,7 @@ Generates a tailored `docs-optimizer` skill plus a drift-check harness for a tar
 
 ## Install
 
-Skills are installed via `npx skills`. See the project root for installation tooling.
+Install via `npx skills add TravisCarden/ai-gleanings --skill docs-optimizer-creator` or `npx skills add TravisCarden/ai-gleanings` for all skills.
 
 ## Test
 

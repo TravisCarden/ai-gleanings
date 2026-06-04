@@ -68,7 +68,7 @@ description: ...
 ```
 
 ### Installation
-Skills are installed via `npx skills`. Individual install scripts are not part of the skill's responsibility; the skill directory is consumed by the installer.
+Skills are installed via `npx skills add TravisCarden/ai-gleanings` (all skills) or `npx skills add TravisCarden/ai-gleanings --skill <name>` (specific skill). Individual install scripts are not part of the skill's responsibility; the skill directory is consumed by the installer.
 
 ## Historical Changes
 

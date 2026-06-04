@@ -34,7 +34,7 @@ Archived artifacts must be well-designed, useful, tested, documented, and solve 
 The repository organizes by deployment context rather than artifact type, with the repository itself serving as the primary example of project structure best practices.
 
 ### Skill Organization
-Skills live in `/skills/` as the source of truth. They are invoked by direct path mention against this repo, or installed user-level via `npx skills`. The project does not maintain a `.claude/skills/` symlink set — see [`docs/adr/0001-skills-invocation-strategy.md`](docs/adr/0001-skills-invocation-strategy.md) for the rationale.
+Skills live in `/skills/` as the source of truth. They are invoked by direct path mention against this repo, or installed user-level via `npx skills add TravisCarden/ai-gleanings` (all skills) or `npx skills add TravisCarden/ai-gleanings --skill <name>` (specific skill). The project does not maintain a `.claude/skills/` symlink set — see [`docs/adr/0001-skills-invocation-strategy.md`](docs/adr/0001-skills-invocation-strategy.md) for the rationale.
 
 ### Configuration Philosophy
 Global configs are templates showing patterns, not copies of actual personal configurations. Templates show the principles without personal details.

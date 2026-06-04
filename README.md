@@ -42,8 +42,11 @@ Setup files for consistent development: dependencies and project configuration.
 ### Cherry-Picking Tools
 
 ```bash
+# Install all skills from this repo
+npx skills add TravisCarden/ai-gleanings
+
 # Install a specific skill (recommended)
-npx skills
+npx skills add TravisCarden/ai-gleanings --skill docs-optimizer-creator
 
 # Try configuration templates
 cp global-config/agent-settings/settings.json ~/.claude/settings.json

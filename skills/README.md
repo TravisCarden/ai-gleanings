@@ -24,4 +24,4 @@ Skills with measurable outputs include eval suites testing trigger conditions, e
 
 ## Usage
 
-Skills are installed via `npx skills`. They can also be invoked directly by reading a skill's `SKILL.md` from this repo.
+Skills are installed via `npx skills add TravisCarden/ai-gleanings` (all skills) or `npx skills add TravisCarden/ai-gleanings --skill <name>` (specific skill). They can also be invoked directly by reading a skill's `SKILL.md` from this repo.
