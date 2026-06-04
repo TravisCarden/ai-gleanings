@@ -20,7 +20,7 @@ Skills like `improve-codebase-architecture`, `diagnose`, and `tdd` read `CONTEXT
 
 ### Additional Context
 
-For projects that need to document significant architectural decisions, consider maintaining an `docs/adr/` directory with architectural decision records (ADRs) in `NNNN-title.md` format. This project keeps all architectural context in `CONTEXT.md` for simplicity.
+For projects that need architectural decision records (ADRs), the [`grill-with-docs`](https://www.skills.sh/mattpocock/skills/grill-with-docs) skill can create and maintain a `docs/adr/` directory structure. This project keeps all architectural context in `CONTEXT.md` for simplicity.
 
 ## Usage
 
