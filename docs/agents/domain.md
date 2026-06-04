@@ -5,7 +5,6 @@ This repository uses a **single-context** layout for domain documentation.
 ## Layout
 
 - `CONTEXT.md` — domain language and project context (repo root)
-- `docs/adr/` — architectural decision records (ADRs)
 
 ## Consumer Rules
 
@@ -19,32 +18,16 @@ Skills like `improve-codebase-architecture`, `diagnose`, and `tdd` read `CONTEXT
 
 **Location:** `/CONTEXT.md` (repo root)
 
-### Architectural Decision Records
+### Additional Context
 
-ADRs document significant architectural decisions and their rationale.
-
-**Location:** `docs/adr/`
-**Format:** `NNNN-title.md` (e.g., `0001-use-local-markdown-for-issues.md`)
-
-Skills read ADRs to understand:
-- Past architectural decisions and context
-- Technical constraints and trade-offs
-- Patterns to follow or avoid
-- Migration paths and technical debt
+For projects that need to document significant architectural decisions, consider maintaining an `docs/adr/` directory with architectural decision records (ADRs) in `NNNN-title.md` format. This project keeps all architectural context in `CONTEXT.md` for simplicity.
 
 ## Usage
 
 When skills need domain context:
-1. They first read `CONTEXT.md` for current domain language
-2. They scan `docs/adr/` for relevant past decisions
-3. They apply this context to their analysis and recommendations
+1. They read `CONTEXT.md` for current domain language and architectural principles
+2. They apply this context to their analysis and recommendations
 
 ## Setup
 
-Create these files as needed:
-```bash
-touch CONTEXT.md
-mkdir -p docs/adr
-```
-
-Start with a basic `CONTEXT.md` that describes your project's purpose and key concepts.
+Create a `CONTEXT.md` file that describes your project's purpose, key concepts, and architectural principles.

@@ -24,7 +24,6 @@ Archived artifacts must be well-designed, useful, tested, documented, and solve 
 ## Artifact Types
 
 - **Skills** (`skills/`) — Custom agent skills with eval suites. The currently-built set is `skill-auditor`, `docs-optimizer`, and `docs-optimizer-creator`.
-- **Instructions** (`instructions/`) — Placeholder for agent-agnostic instruction templates; not yet populated.
 - **Configurations** (`global-config/`) — Placeholder for user-level configuration templates; not yet populated.
 - **Setup** (`Brewfile`) — Development environment dependencies.
 
@@ -34,7 +33,7 @@ Archived artifacts must be well-designed, useful, tested, documented, and solve 
 The repository organizes by deployment context rather than artifact type, with the repository itself serving as the primary example of project structure best practices.
 
 ### Skill Organization
-Skills live in `/skills/` as the source of truth. They are invoked by direct path mention against this repo, or installed user-level via `npx skills add TravisCarden/ai-gleanings` (all skills) or `npx skills add TravisCarden/ai-gleanings --skill <name>` (specific skill). The project does not maintain a `.claude/skills/` symlink set — see [`docs/adr/0001-skills-invocation-strategy.md`](docs/adr/0001-skills-invocation-strategy.md) for the rationale.
+Skills live in `/skills/` as the source of truth. For self-management, the repo maintains `.agents/skills/` symlinks to skills it uses on itself (`skill-auditor`, `docs-optimizer`) with `.claude/skills/` pointing to `.agents/skills/` for Claude Code discovery. End users install via `npx skills add TravisCarden/ai-gleanings` (all skills) or `npx skills add TravisCarden/ai-gleanings --skill <name>` (specific skill).
 
 ### Configuration Philosophy
 Global configs are templates showing patterns, not copies of actual personal configurations. Templates show the principles without personal details.

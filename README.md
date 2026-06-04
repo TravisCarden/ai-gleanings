@@ -8,7 +8,6 @@ Browse the directories to find tools you can use immediately:
 
 - **`skills/`** - Custom agent skills with eval suites
 - **`global-config/`** - Configuration templates for your `~/.claude/` setup
-- **`instructions/`** - Agent-agnostic instruction patterns
 - **`Brewfile`** - Install AI development dependencies: `brew bundle`
 
 Each directory includes documentation and usage examples.
@@ -31,9 +30,6 @@ Templates for user-level setup:
 - **RTK** - Token optimization configurations
 - **Shell integration** - Hooks and productivity functions
 
-### Instructions (`/instructions/`)
-Agent-agnostic instruction templates with universal principles and concrete examples.
-
 ### Development Environment
 Setup files for consistent development: dependencies and project configuration.
 
@@ -51,8 +47,8 @@ npx skills add TravisCarden/ai-gleanings --skill docs-optimizer-creator
 # Try configuration templates
 cp global-config/agent-settings/settings.json ~/.claude/settings.json
 
-# Apply instruction patterns
-# Copy and adapt instructions/*.md for your agent setup
+# Copy configuration patterns
+# Adapt global-config/ templates for your setup
 ```
 
 See [`skills/NAMING.md`](skills/NAMING.md) for the skill naming and install convention.
@@ -60,9 +56,8 @@ See [`skills/NAMING.md`](skills/NAMING.md) for the skill naming and install conv
 ### Learning Patterns
 
 - Study `CONTEXT.md` for architectural principles
-- Read `docs/adr/` for key design decisions
 - Examine skill structure in `/skills/README.md`
-- Review the project's own `.claude/` configuration
+- Review the project's own `.claude/` and `.agents/` configuration
 
 ### Setting Up Development Environment
 
