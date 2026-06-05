@@ -106,6 +106,10 @@ harness reference the in-repo path so the target repo is self-contained
 — invocation does not depend on this generic skill remaining at any
 particular path.
 
+**IMPORTANT**: Skills must follow the standard directory structure:
+`<skills-location>/<skill-name>/SKILL.md`, not `<skills-location>/<skill-name>.md`.
+For example: `.claude/skills/docs-optimizer/SKILL.md`, not `.claude/skills/docs-optimizer.md`.
+
 The destination directory follows the repo's existing skill convention
 (detected in Step 2). If no convention exists, ask the user.
 
@@ -119,10 +123,10 @@ The destination directory follows the repo's existing skill convention
 optimizer is calibrated against>
 
 ### Proposed tailored docs-optimizer
-Path: <chosen path matching the repo's skill convention>
+Path: `<chosen path matching the repo's skill convention>/<skill-name>/SKILL.md`
 <full content as a fenced code block>
 
-Plus a copy of `verify_refs.py` at the same directory.
+Plus a copy of `verify_refs.py` at `<chosen path>/<skill-name>/verify_refs.py`.
 
 ### Proposed drift-check
 Path: <chosen path, matching the repo's test framework, e.g.
