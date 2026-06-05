@@ -61,10 +61,20 @@ While reading the docs and code, capture:
 - **Repo-specific conventions**: forbidden patterns, naming rules,
   ownership boundaries. The generic optimizer doesn't know these.
 - **Existing skills location**: where does the repo already keep
-  agent-instruction artifacts? If a convention exists in the repo
-  (a skills directory, a rules directory, an `AGENTS.md` section),
-  match it. If the repo has none, ask the user before defaulting.
-  Do not bias toward any specific agent harness.
+  agent-instruction artifacts? Follow this systematic detection order:
+  1. **Check agent instructions first**: Look in `CLAUDE.md`, `AGENTS.md`, 
+     `README.md`, and `docs/` for explicit skill location conventions
+  2. **Check directory structure**: Look for existing patterns like:
+     - `skills/` or `.skills/`
+     - `.agents/skills/` or `.agents/`
+     - `.claude/skills/` or `.claude/`
+     - `agents/skills/` or `agents/`
+  3. **In case of ambiguity**: Favor `.agents/skills` as the default
+  4. **Look for agent evidence**: If `CLAUDE.md` exists, prefer Claude-specific
+     paths like `.claude/skills`; if other agent configs exist, match their
+     conventions
+  5. **No convention found**: Ask the user explicitly before choosing a location.
+  Do not bias toward any specific agent harness unless evidence supports it.
 - **Brevity / style preferences**: does the repo use a `caveman` skill
   or any other compression / brevity convention? If so, the tailored
   skill's prose should follow that convention. Don't introduce a verbose
