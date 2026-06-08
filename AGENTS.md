@@ -12,4 +12,4 @@ Uses default triage vocabulary (needs-triage, needs-info, ready-for-agent, ready
 
 ### Domain docs
 
-Single-context layout with `CONTEXT.md` at repo root. Skills like `improve-codebase-architecture`, `diagnose`, and `tdd` read it for domain context.
+Single-context layout with [`CONTEXT.md`](CONTEXT.md) at repo root. Skills like `improve-codebase-architecture`, `diagnose`, and `tdd` read it for domain context.

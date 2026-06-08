@@ -13,9 +13,9 @@ This repository captures and shares AI tooling, demonstrating patterns through w
 
 ## Artifact Types
 
-- **Skills** (`skills/`) — Custom agent skills with eval suites. Current set: `skill-auditor`, `docs-optimizer`, `docs-optimizer-creator`.
-- **Configurations** (`global-config/`) — User-level configuration templates for `~/.claude/`.
-- **Setup** (`Brewfile`) — Development environment dependencies.
+- **Skills** ([`skills/`](skills/)) — Custom agent skills with eval suites. Current set: [`skill-auditor`](skills/skill-auditor/), [`docs-optimizer`](skills/docs-optimizer/), [`docs-optimizer-creator`](skills/docs-optimizer-creator/).
+- **Configurations** ([`global-config/`](global-config/)) — User-level configuration templates for `~/.claude/`.
+- **Setup** ([`Brewfile`](Brewfile)) — Development environment dependencies.
 
 ## Architecture Decisions
 
@@ -23,13 +23,13 @@ This repository captures and shares AI tooling, demonstrating patterns through w
 Organized by deployment context rather than artifact type. The repo itself serves as the primary example of project structure best practices.
 
 ### Skill Organization
-Skills live in `/skills/` as source of truth. For self-management, the repo maintains `.agents/skills/` symlinks to the skills it uses on itself (`skill-auditor`, `docs-optimizer`), with `.claude/skills/` pointing to `.agents/skills/` for Claude Code discovery. End users install via `npx skills add TravisCarden/ai-gleanings`.
+Skills live in [`/skills/`](skills/) as source of truth. For self-management, the repo maintains [`.agents/skills/`](.agents/skills/) symlinks to the skills it uses on itself ([`skill-auditor`](skills/skill-auditor/), [`docs-optimizer`](skills/docs-optimizer/)), with [`.claude/skills/`](.claude/skills/) pointing to `.agents/skills/` for Claude Code discovery. End users install via `npx skills add TravisCarden/ai-gleanings`.
 
 ### Configuration Philosophy
 Templates show patterns without personal details — the 80% use case, production-ready, forkable.
 
 ### Documentation Strategy
-Key patterns and decisions documented here. `README.md` optimizes for discovery; success = understanding the philosophy and identifying relevant tools in under 5 minutes.
+Key patterns and decisions documented here. [`README.md`](README.md) optimizes for discovery; success = understanding the philosophy and identifying relevant tools in under 5 minutes.
 
 ### Setup Philosophy
 Selective adoption with clear dependencies. Each artifact documents its own dependencies. No all-or-nothing approach.

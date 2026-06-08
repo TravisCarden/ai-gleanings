@@ -4,9 +4,9 @@ A collection of AI tooling and patterns with working examples for software engin
 
 ## What's Inside
 
-- **`skills/`** — Custom agent skills with eval suites
-- **`global-config/`** — Configuration templates for `~/.claude/`
-- **`Brewfile`** — AI development dependencies: `brew bundle`
+- **[`skills/`](skills/)** — Custom agent skills with eval suites
+- **[`global-config/`](global-config/)** — Configuration templates for `~/.claude/`
+- **[`Brewfile`](Brewfile)** — AI development dependencies: `brew bundle`
 
 ## Install
 
@@ -24,4 +24,4 @@ cp global-config/agent-settings/settings.json ~/.claude/settings.json
 brew bundle
 ```
 
-See [`skills/NAMING.md`](skills/NAMING.md) for naming and install conventions. See `CONTEXT.md` for architecture and design principles.
+See [`skills/NAMING.md`](skills/NAMING.md) for naming and install conventions. See [`CONTEXT.md`](CONTEXT.md) for architecture and design principles.
