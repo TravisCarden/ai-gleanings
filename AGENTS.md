@@ -4,12 +4,12 @@
 
 ### Issue tracker
 
-Issues are tracked as local Markdown files under `.scratch/<feature>/`. See `docs/agents/issue-tracker.md`.
+Issues are tracked as local Markdown files under `.scratch/<feature>/`.
 
 ### Triage labels
 
-Uses default triage vocabulary (needs-triage, needs-info, ready-for-agent, ready-for-human, wontfix). See `docs/agents/triage-labels.md`.
+Uses default triage vocabulary (needs-triage, needs-info, ready-for-agent, ready-for-human, wontfix).
 
 ### Domain docs
 
-Single-context layout with `CONTEXT.md` at repo root. See `docs/agents/domain.md`.
+Single-context layout with `CONTEXT.md` at repo root. Skills like `improve-codebase-architecture`, `diagnose`, and `tdd` read it for domain context.
