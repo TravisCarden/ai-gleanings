@@ -2,26 +2,29 @@
 
 Skills demonstrating patterns in skill design, testing, and documentation.
 
-## Quality Standards
+## Skills
 
-Skills are well-designed, useful, tested, documented, and solve real problems.
+| Skill | Description |
+|-------|-------------|
+| [`docs-optimizer`](docs-optimizer/) | Audit, consolidate, and clean up instruction docs — finds drift, conflicts, redundancy, and broken references across files, then optionally applies fixes. |
+| [`docs-optimizer-creator`](docs-optimizer-creator/) | Generate a tailored `docs-optimizer` skill plus a drift-check harness for a target repo, calibrated to its conventions and actual drift patterns. |
+| [`skill-auditor`](skill-auditor/) | Audit agent skills against marketplace-quality heuristics — structure, token footprint, routing integrity, evals presence, and content quality. |
+
+## Install
+
+```bash
+npx skills add TravisCarden/ai-gleanings --skill <name>
+npx skills add TravisCarden/ai-gleanings  # all skills
+```
 
 ## Structure
 
 ```
 skill-name/
-├── SKILL.md         # Skill definition
+├── SKILL.md         # Skill definition (loaded by the agent)
 ├── evals/           # Evaluation test cases
 ├── scripts/         # Bundled automation
-└── references/      # Documentation and examples
+└── references/      # Progressive-disclosure modules
 ```
 
-See [NAMING.md](NAMING.md) for skill naming conventions (noun-based: `docs-optimizer`, `skill-creator`).
-
-## Testing
-
-Skills with measurable outputs include eval suites testing trigger conditions, expected outcomes, and token efficiency.
-
-## Usage
-
-Skills are installed via `npx skills add TravisCarden/ai-gleanings` (all skills) or `npx skills add TravisCarden/ai-gleanings --skill <name>` (specific skill). They can also be invoked directly by reading a skill's `SKILL.md` from this repo.
+See [NAMING.md](NAMING.md) for naming conventions. Each skill's README has usage details, test instructions, and limitations.
