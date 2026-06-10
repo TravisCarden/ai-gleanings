@@ -27,4 +27,4 @@ skill-name/
 └── references/      # Progressive-disclosure modules
 ```
 
-See [NAMING.md](NAMING.md) for naming conventions. Each skill's README has usage details, test instructions, and limitations.
+See [NAMING.md](NAMING.md) for naming conventions and [Best Practices](../docs/best-practices.md) for architectural recommendations. Each skill's README has usage details, test instructions, and limitations.

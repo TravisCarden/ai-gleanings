@@ -1,6 +1,8 @@
 ---
 name: docs-optimizer-creator
 description: Generate a tailored `docs-optimizer` skill plus a drift-check harness for a target repo, calibrated to its conventions, validation infrastructure, and actual drift patterns. Use when setting up docs governance for a repo that doesn't have it, or when asked to "set up drift detection", "scaffold docs governance", or "create a docs-optimizer for this repo".
+disable-model-invocation: true
+user-invocable: true
 ---
 
 # Docs Optimizer Creator

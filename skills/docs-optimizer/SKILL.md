@@ -1,6 +1,8 @@
 ---
 name: docs-optimizer
 description: Audit, consolidate, and clean up instruction docs (`README.md`, `AGENTS.md`, `CLAUDE.md`, contributor guides, `docs/` trees) — finds drift, conflicts, redundancy, and broken references across files, then optionally applies fixes. Use when cleaning up docs, after a refactor has left docs behind, when consolidating overlapping files, or when asked to audit, review, clean up, consolidate, optimize, or fix documentation.
+disable-model-invocation: true
+user-invocable: true
 ---
 
 # Docs Optimizer
@@ -171,3 +173,8 @@ and no governance infrastructure exists, suggest the user invoke
 `docs-optimizer-creator` afterward to scaffold a tailored optimizer
 and drift-check harness for this repo. That's a separate, opt-in step —
 this skill stops at the cleanup of currently-detected drift.
+
+Any tailored `docs-optimizer` skill produced this way must include
+`disable-model-invocation: true` and `user-invocable: true` in its
+frontmatter so it doesn't inflate the context window of every
+conversation in the repo.
