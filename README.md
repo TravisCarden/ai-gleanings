@@ -5,7 +5,6 @@ A collection of AI tooling and patterns with working examples for software engin
 ## What's Inside
 
 - **[`skills/`](skills/)** — Custom agent skills with eval suites
-- **[`global-config/`](global-config/)** — Configuration templates for `~/.claude/`
 - **[`Brewfile`](Brewfile)** — AI development dependencies: `brew bundle`
 
 ## Install
@@ -16,9 +15,6 @@ npx skills add TravisCarden/ai-gleanings --skill docs-optimizer-creator
 
 # All skills
 npx skills add TravisCarden/ai-gleanings
-
-# Config template
-cp global-config/agent-settings/settings.json ~/.claude/settings.json
 
 # Dependencies
 brew bundle

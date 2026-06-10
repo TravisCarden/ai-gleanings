@@ -14,7 +14,6 @@ This repository captures and shares AI tooling, demonstrating patterns through w
 ## Artifact Types
 
 - **Skills** ([`skills/`](skills/)) — Custom agent skills with eval suites. Current set: [`skill-auditor`](skills/skill-auditor/), [`docs-optimizer`](skills/docs-optimizer/), [`docs-optimizer-creator`](skills/docs-optimizer-creator/).
-- **Configurations** ([`global-config/`](global-config/)) — User-level configuration templates for `~/.claude/`.
 - **Setup** ([`Brewfile`](Brewfile)) — Development environment dependencies.
 
 ## Architecture Decisions
