@@ -89,7 +89,26 @@ main() {
   if [[ -f "$skill_path/SKILL.md" ]]; then
     if head -1 "$skill_path/SKILL.md" | grep -q '^---$'; then
       local desc
-      desc=$(sed -n '/^---$/,/^---$/p' "$skill_path/SKILL.md" | grep -E '^description:' | sed 's/^description: *//' || echo "")
+      desc=$(awk '
+        /^---$/ { fm++; if (fm == 2) exit; next }
+        fm == 1 && mode == 0 && /^description:/ {
+          rest = $0
+          sub(/^description:[[:space:]]*/, "", rest)
+          if (rest ~ /^[|>]/ || rest == "") { mode = 1; next }
+          print rest
+          exit
+        }
+        fm == 1 && mode == 1 {
+          if ($0 ~ /^[[:space:]]+/) {
+            line = $0
+            sub(/^[[:space:]]+/, "", line)
+            printf "%s ", line
+            next
+          }
+          if ($0 ~ /^$/) { next }
+          exit
+        }
+      ' "$skill_path/SKILL.md" | sed 's/[[:space:]]*$//')
       if [[ -n "$desc" ]]; then
         success "Frontmatter description found"
       else
